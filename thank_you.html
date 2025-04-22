@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contributors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-white p-4">
+  <div class="container mx-auto max-w-3xl">
+    <div>
+      <h1 class="text-2xl font-bold">ToTravelTo.com</h1>
+      <p class="text-gray-700">Making low-carbon travel possible, for all.</p>
+    </div>
+    <div class="textarea-container bg-white p-6 mb-6 shadow rounded">
+      <p class="mb-4 text-gray-800">Tell the community about your 2024 holidays, and we’ll share ideas for 2025.</p>
+      <form action="/memories/new" method="get">
+        <textarea 
+          rows="5" 
+          placeholder="Where did you go? Any standout moments? Write here..." 
+          class="w-full p-4 text-gray-800 border border-gray-300 rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-blue-400"
+        ></textarea>
+        <button 
+          type="submit"          
+          class="mt-4 px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+        Add Memory
+        </button>
+      </form>
+    </div>
+
+    <div id="video-player" class="bg-white p-6 mb-6 shadow rounded hidden">
+      <video id="train-video" autoplay muted playsinline class="w-full">
+        <source src="videos/coverr-train-going-through-a-tunnel-2526-1080p.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div id="thank-you" class="contributors bg-gray-100 p-6 rounded shadow">
+      <h2 class="text-xl font-semibold mb-4">Thank You</h2>
+      <p class="text-gray-700 mb-4">
+        To those who are giving train travel a go, we hope you enjoy the experience. 
+        We are grateful for your support and feedback, for this is what will make low-carbon travel better.               
+      </p>
+      <h2 class="text-lg font-semibold mb-2">Thank you to all these GREAT people for all their contributions</h2>
+      <p>
+        This project is made possible by the contributions of many individuals. 
+        We are grateful for their support and dedication.
+      </p>
+      <p class="text-gray-700">
+        <a href="https://www.linkedin.com/in/juverianoorain/" target="_blank" class="text-blue-500 hover:underline">Juveria (Ria) Noorain</a> (Málaga),
+        <a href="https://www.linkedin.com/in/jayasmita/" target="_blank" class="text-blue-500 hover:underline">Jayasmita Bhattacharjee</a> (Hamburg),
+        <a href="https://www.linkedin.com/in/jayasmita/" target="_blank" class="text-blue-500 hover:underline">Katarina</a> (),
+        <a href="https://www.linkedin.com/in/i-am-animesh/" target="_blank" class="text-blue-500 hover:underline">Animesh Ghosh</a> (Mumbai),
+        <a href="https://www.linkedin.com/in/lucia-g-08540050" target="_blank" class="text-blue-500 hover:underline">Lucy Galatolo</a> (Manchester),
+        <a href="https://www.linkedin.com/in/jennie-hughes/" target="_blank" class="text-blue-500 hover:underline">Jennie Hughes</a> (Manchester),
+        <a href="https://www.linkedin.com/in/lunamurias/" target="_blank" class="text-blue-500 hover:underline">Luna Murias</a> (Valencia),
+        <a href="https://www.linkedin.com/in/jonnyquirk/" target="_blank" class="text-blue-500 hover:underline">Jonny 'Community' Quirk</a> (Manchester),
+        <a href="https://www.linkedin.com/in/dazcodes/" target="_blank" class="text-blue-500 hover:underline">Daz</a> (Manchester),
+        <a href="https://www.linkedin.com/in/bflader/" target="_blank" class="text-blue-500 hover:underline">Benjamin Flader</a> (Berlin),
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">Benjamin</a> (Paris),
+        <a href="https://www.linkedin.com/in/helenannatodd/" target="_blank" class="text-blue-500 hover:underline">Helen Todd</a> (Sheffield),                
+        <a href="https://www.linkedin.com/in/catalina-mueller/" target="_blank" class="text-blue-500 hover:underline">Catalina Mueller</a> (Berlin)
+        <!-- Advisors -->
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">Tomas</a> (Málaga),
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">Susan</a> (Málaga),
+        <a href="https://www.linkedin.com/in/keegandum/" target="_blank" class="text-blue-500 hover:underline">Keegan Dum</a> (Málaga).
+      </p>
+      <h2 class="text-lg font-semibold mb-2">Thank you to our friends for support</h2>
+      <p class="text-gray-700">
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">OUAT - Once Upon A Train</a> (Paris),
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">Matty - Non Stop Euro Trip</a> (UK/Europe/Everywhere),
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">Albie - SuperAlbs</a> (UK/Europe/Everywhere),
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">Jon 'Crossing Borders' Worth</a> (France),
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">Josef 'Mr ODSM' Bileto</a> (Prague),
+        <a href="#" target="_blank" class="text-blue-500 hover:underline">Nick (AllRail)</a> (Cologne)
+      </p>
+
+      <h2 class="text-lg font-semibold mb-2">
+        If you would like to contribute, please reach out to us via our social media channels.
+      </h2>
+      
+    </div>
+  </div>
+
+  <script>
+    // Hide the video div initially
+    const videoDiv = document.getElementById('video-player');
+    const thankYouDiv = document.getElementById('thank-you');
+    const video = document.getElementById('train-video');
+
+    // Show the video div after a short delay seconds, hide the thank-you div, and play the video
+    setTimeout(() => {
+      thankYouDiv.classList.add('hidden');
+      videoDiv.classList.remove('hidden');
+      video.currentTime = 5; 
+      video.play();
+    }, 4000);
+
+    // Show the thank-you div again after the video finishes
+    video.addEventListener('ended', () => {
+      videoDiv.classList.add('hidden');
+      thankYouDiv.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
