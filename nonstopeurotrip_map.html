@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nonstop Eurotrip Map</title>
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  #container {
+    display: flex;
+    height: 100%;
+  }
+  #list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #5aee5a;
+  }
+  #list p {
+    background: white;
+    padding: 5px;
+  }
+  #map {
+    flex: 2;
+    overflow: hidden;
+    height: 650px;
+  }
+  a[id] {
+    font-size: 0pt;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('<%= image_path('circle-outline-16.png') %>') no-repeat center center; /* Path to your icon */
+    background-size: contain; /* Ensures the icon fits within the element */
+  }
+</style>
+</head>
+
+<body>
+  <script defer data-domain="totravelto.com" src="https://plausible.io/js/script.js"></script>
+
+<div id="container">
+  <div id="list">
+    <h2>Nonstop Eurotrip Map</h2>
+    <h2>100k subscribers special by totravelto.com</h2>
+    <p>Well done Matty. Check out his videos by clicking a location on the map.
+      <br/>When you're finished join the wait list for <a href="https://totravelto.com">totravelto.com</a>'s AI assisted train trip planner.
+    </p>
+
+    <p><a href='https://www.youtube.com/watch?v=pB_6rqg-wBU' target='_blank'>Is This China's BEST High-Speed Train? The CRH380A Reviewed!</a><a id='pB_6rqg-wBU'>pB_6rqg-wBU</a><br/>Book all your Chinese Train tickets with Trip.com:
+      
+      
+      Hello and welcome back to China, where today we'll be checking out one of their very best imported trains!
+      
+      We'll be riding in First Class, from Nanjing to Hangzhou onboard the CRH380AL, the 16-car extended version of the 380km/h high-speed train, which is descended from the Japanese E2 Shinkansen, so let's go and check it out together!
+      
+      Date of Filming: 22/9/23
+      Camera: GoPro Hero 10 Black
+      Operator: Chinese Ra</p><p><a href='https://www.youtube.com/watch?v=_5DigrFiKeE' target='_blank'>How Much MONEY does a Train YouTuber Make? 100K Special!</a><a id='_5DigrFiKeE'>_5DigrFiKeE</a><br/>MANTA SLEEP: Buy One Mask, Get One Half Price using this Link:
+      
+      
+      Hello and welcome to a VERY SPECIAL video... we finally made it to 100,000 subscribers!
+      
+      This video is a mega Q&A and PRIZE GIVEAWAY, so watch to the end to find out how to enter and win some great prizes! To each and every one of you who watch, like, comment and engage regularly with my videos, and allow me to live my drea</p><p><a href='https://www.youtube.com/watch?v=kmIXjl6W7J4' target='_blank'>The Arctic Circle by Train / Part 2 / Trondheim to Bodø</a><a id='kmIXjl6W7J4'>kmIXjl6W7J4</a><br/>Use my Link to get up to 15% OFF with amazing  Level8 Luggage this Christmas:
+      https://www.level8cases.com/?ref=Nkw03qqI
+      
+      Hello and welcome back to Norway, where today we're embarking on the second of a two part trip up to the Norwegian Arctic Circle by Train!
+      
+      If you haven't seen Part 1, between Oslo and Trondheim, I'll link it here:
+      https://youtu.be/avFXVQlglSQ
+      
+      Tonight we'll be travelling from Trondheim to Bodø on a sleeper train covering the remaining 700km of this epic 1300km, 19 hour trip, </p><p><a href='https://www.youtube.com/watch?v=avFXVQlglSQ' target='_blank'>The Arctic Circle by Train / Part 1 / Oslo to Trondheim</a><a id='avFXVQlglSQ'>avFXVQlglSQ</a><br/>Use my Link to get up to 15% OFF with amazing  Level8 Luggage this Christmas:
+      https://www.level8cases.com/?ref=Nkw03qqI
+      
+      Hello and welcome back to Norway, where today we're embarking on a 2 part trip up to the Norwegian Arctic Circle by Train!
+      
+      Today and tonight we'll be travelling from Oslo to Trondheim, and onwards to Bodø on first a day train, and then a sleeper train over 1300km in 19 hours on this epic trip, so let's go and check it out together!
+      
+      Date of Filming: 4/12/23
+      Camera: GoPro Hero</p><p><a href='https://www.youtube.com/watch?v=bZInjerE3a0' target='_blank'>Inaugural NIGHTJET Sleeper POD 'Next Generation' Night Train - FIRST REVIEW!</a><a id='bZInjerE3a0'>bZInjerE3a0</a><br/>Download the TrainPal App today and get 34% OFF UK Railcards AND 5% OFF UK and European Train Tickets with code: EUROTRIP
+      
+      
+      
+      Hello and welcome back to Austria for a VERY special occasion!
+      
+      Tonight we will travel over 1000km from Vienna up to Hamburg, Germany in one of the BRAND NEW ÖBB couchette mini cabins, aka PODs, the most innovative idea in sleeper trains for 100+ years. We'll also look at all other accommodations o</p><p><a href='https://www.youtube.com/watch?v=eeMH9dmIEHE' target='_blank'>The Truth Behind Taking a Sleeper Train in KAZAKHSTAN!</a><a id='eeMH9dmIEHE'>eeMH9dmIEHE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to Kazakhstan for the first time, where we'll be checking out one of their famous sleeper trains!
+      
+      This journey will see us travel from Aralsk, at the famous Aral Sea, up to Aktobe on the border with Russia. We'll be in a Second Class Kupe compartment for this overnight trip, so let's go and check it out together!
+      
+      Date of Filming: 30 to 31/8/23
+      Camera: GoPro He</p><p><a href='https://www.youtube.com/watch?v=d8f4CwJSspM' target='_blank'>Deluxe Sleeper Train from Istanbul to Sofia (SUPER DELAYED!)</a><a id='d8f4CwJSspM'>d8f4CwJSspM</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Turkey, where tonight we'll be taking a special sleeper train to Sofia, Bulgaria!
+      
+      This is one of the very few trains to cross an EU external border, and in my opinion, one of the best sleeper coaches out there! Come along and join me on a trip that didn't exactly go to plan, but was still great fun!
+      
+      Date of Filming: 4 to 5/9/23
+      Camera: GoPro Hero 10 Bl</p><p><a href='https://www.youtube.com/watch?v=lgv8bOhHXhs' target='_blank'>Shanghai's INSANE 431km/h Maglev Airport Express</a><a id='lgv8bOhHXhs'>lgv8bOhHXhs</a><br/>Book all your Chinese Train tickets with Trip.com:
+      
+      
+      Hello and welcome back to China, where today I'll be ticking off a bucket list item!
+      
+      Today we'll be taking an Airport Express train... And what's so special I might hear you ask? Well, it's a 431km/h MAGLEV train, that covers the 30km in just 8 minutes, so let's go and check it out together!
+      
+      Date of Filming: 21/9/23
+      Camera: GoPro Hero 10 Black
+      Operator: Chinese Railways
+      Departure: Shanghai Pudong Airport, Ch</p><p><a href='https://www.youtube.com/watch?v=uO_L98dcOCI' target='_blank'>Business Class on Georgia's Flagship Train Really AMAZED ME!</a><a id='uO_L98dcOCI'>uO_L98dcOCI</a><br/>Get 15% OFF & FREE SHIPPING at Level8 at this link, using code BF2023:
+      
+      
+      Hello and welcome back to Georgia, where today we'll be taking the country's flagship train!
+      
+      We'll be riding in the top tier Business Class between the two biggest cities on this beautiful sunset ride along the Black Sea coast... This train, and journey really surprised me, so let's go and check it out together!
+      
+      Date of Filming: 17/2/22
+      Camera: GoPro Hero 10 Black
+      Operator: Geor</p><p><a href='https://www.youtube.com/watch?v=1hDug_f-7V0' target='_blank'>Taiwan's NEW FLAGSHIP Tze-Chiang Limited Express in Business Class</a><a id='1hDug_f-7V0'>1hDug_f-7V0</a><br/>Get 15% OFF & FREE SHIPPING at Level8 at this link, using code BF2023:
+      
+      
+      Hello and welcome to Taiwan for the first time on the channel!
+      
+      I'm just starting my exploration of another new country's rail network. Up first, we check out Taiwan's version of in infamous UK Class 800 EMU. We'll ride in Business Class in the south of the island and see how they stack up to their distant cousin...so let's go!
+      
+      Date of Filming: 15/9/23
+      Camera: GoPro Hero 10 Black</p><p><a href='https://www.youtube.com/watch?v=bkcgW4RdjR0' target='_blank'>Indonesia's Brand New WHOOSH 350km/h Bullet Train REVIEWED!</a><a id='bkcgW4RdjR0'>bkcgW4RdjR0</a><br/>Get 15% OFF & FREE SHIPPING at Level8 at this link, using code BF2023:
+      
+      
+      Hello and welcome to Indonesia for the first time on the channel!
+      
+      After many requests from lovely Indonesian's, I'm super excited to finally be here, not to mention checking out the BRAND NEW Highspeed Railway that recently opened in the country. It was so new when I rode it, that you couldn't even BUY a ticket yet! So join me from Jakarta to Bandung at on the famed Chinese CR400</p><p><a href='https://www.youtube.com/watch?v=0KzfMK8ogIw' target='_blank'>Africa's FASTEST Train / Morocco's 320km/h Al Boraq First Class Review</a><a id='0KzfMK8ogIw'>0KzfMK8ogIw</a><br/>Go to https://betterhelp.com/nonstop for 10% off your first month of therapy with BetterHelp and get matched with a therapist who will listen and help #advert
+      
+      Hello and welcome back to Morocco, where today we're taking Africa's ONLY Highspeed train.
+      
+      Today we'll be travelling from Casablanca to Tangier, along the length of Morocco's high-speed railway onboard the TGV-based 'Al Boraq' double-decker EMU, so let's go and check it out together!
+      
+      Date of Filming: 25/3/23
+      Camera: GoPro Hero 10 Black
+      </p><p><a href='https://www.youtube.com/watch?v=f5wG0eU3NM4' target='_blank'>China's 400km/h ULTRA high-speed train with LIE-FLAT Suites!</a><a id='f5wG0eU3NM4'>f5wG0eU3NM4</a><br/>Book all your Chinese Train tickets with trip.com:
+      
+      
+      Hello and welcome to CHINA! I've finally made it and today am starting with a bang, riding the World's FASTEST Train!
+      
+      Today we'll be travelling from Shanghai to Nanjing, on the route to Beijing, and will be having the full Business Class experience, with lie-flat beds, free food, all in a closing-door suite. There's now no doubt in my mind, this is the BEST train in the world, so let's go and check it out tog</p><p><a href='https://www.youtube.com/watch?v=ViyQUI8jtRs' target='_blank'>Exploring Northern Spain in the AMAZING Renfe S121 Highspeed Train</a><a id='ViyQUI8jtRs'>ViyQUI8jtRs</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Spain, where today we're exploring the undiscovered North!
+      
+      The Renfe S121 is a dual-gauge / dual-voltage 4-car EMU which is used on routes which diverge from the highspeed network giving amazing flexibility to quite literally, go anywhere. We're in the northwest corner of Spain today travelling through some of rural Galicia's stunning scenery in one of </p><p><a href='https://www.youtube.com/watch?v=x888RMI23eY' target='_blank'>First Class on India's FLAGSHIP Sleeper Train / Tejas Rajdhani from Delhi to Mumbai</a><a id='x888RMI23eY'>x888RMI23eY</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to India where we'll be taking a ride on the country's premier sleeper train.
+      
+      Today we'll be travelling from New Delhi to Mumbai in First AC private compartment on the Tejas Rajdhani coaches, the highest class of travel on a scheduled Indian train to see just what you get on this flagship product. Food and drinks are included on this 17 hour, 1400km trip s</p><p><a href='https://www.youtube.com/watch?v=WWLK0_VfdMs' target='_blank'>Ignore the Haters... MTRX First Class is BRILLIANT!</a><a id='WWLK0_VfdMs'>WWLK0_VfdMs</a><br/>Check out the NEW Soundcore SpaceONE Headphones here:
+      https://eu.soundcore.com/
+      
+      Hello and welcome back to Sweden where we'll be checking out their BEST private operator!
+      
+      Today we'll be travelling from Gothenburg to Stockholm with MTRX onboard one of their sexy FLIRT200 EMUs in their 'Plus' Class. Let's see how they compare to the competition by way of SJK and their Flagship X2000 service, and budget operator Flixtrain, let's go!
+      
+      Date of Filming: 12/5/23
+      Camera: GoPro Hero 10 Black
+      Operator: M</p><p><a href='https://www.youtube.com/watch?v=K3xWvICI6eQ' target='_blank'>The WORLD'S WORST Sleeper Train (Sorry Sri Lanka!)</a><a id='K3xWvICI6eQ'>K3xWvICI6eQ</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Sri Lanka for a ride on one of the country's NIGHT MAIL services!
+      
+      Today we will be travelling from Badulla to Colombo in what is sold as 'First Class', but as you'll see, it is anything but! I really wanted this trip to be great, but unfortunately these coaches are only good for one thing, and that's the scrap heap!
+      
+      Date of Filming: 7/8/22
+      Camera: GoPr</p><p><a href='https://www.youtube.com/watch?v=OHy6FfAuFR0' target='_blank'>VIP LUXURY on Uzbekistan's Afrosiyob Highspeed Train</a><a id='OHy6FfAuFR0'>OHy6FfAuFR0</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to Uzbekistan for the first video from my recent 'Stans' trip!
+      
+      I thought I'd start with a bang, and go straight in Uzbekistan's 250kmh (155mph) Afrosiyob highspeed train. We'll be travelling in VIP Class today in some super luxurious seats on the 2 hours trip from Tashkent to Samarkand, so come along and let's experience it together!
+      
+      Date of Filming: 12/8/22
+      C</p><p><a href='https://www.youtube.com/watch?v=gloQG1HRZ_A' target='_blank'>Malaysia's FLAGSHIP LUXURY Train / ETS Platinum from Kuala Lumpur to Butterworth</a><a id='gloQG1HRZ_A'>gloQG1HRZ_A</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Malaysia for a ride on the country's Flagship service!
+      
+      Today we will be travelling from Kuala Lumpur to Butterworth on the ETS Platinum in Business Class.  so enjoy the journey!
+      
+      Date of Filming: 7/8/22
+      Camera: GoPro Hero 10 Black
+      Operator: KTM (Malaysian Railways)
+      Departure: Kuala Lumpur, Malaysia
+      Arrival: Butterworth, Malaysia
+      Cost: Business Class - 1</p><p><a href='https://www.youtube.com/watch?v=802V2fg7iBk' target='_blank'>The SECRET Way From Hungary to Slovakia... in FIRST CLASS!</a><a id='802V2fg7iBk'>802V2fg7iBk</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Hungary for an international trip to Slovakia!
+      
+      Today we will be taking the much lesser known and used route between the two neighbouring countries, but in my opinion, it's a much better one! We'll be travelling in a comfortable First Class Slovakian coach for this 3.5 hour route, so enjoy the journey!
+      
+      Date of Filming: 3/9/21
+      Camera: GoPro Hero 7 Black
+      </p><p><a href='https://www.youtube.com/watch?v=FhgQp8pYX-4' target='_blank'>The Famous DEATH RAILWAY! (& Bridge over the River Kwai!)</a><a id='FhgQp8pYX-4'>FhgQp8pYX-4</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Thailand for one of my most memorable journeys to date!
+      
+      Today we will be travelling on the FAMOUS Thai-Burma 'Death' Railways which incorporates the Bridge Over The River Kwai and the Tham Kra Sae Wooden Trestle Bridge. This railways has so many stories connected with it, that I'll try and explain throughout the video, so sit back and enjoy!
+      
+      Date of Fi</p><p><a href='https://www.youtube.com/watch?v=TUbz8cVzNh0' target='_blank'>Amazing Value SLEEPER TRAIN from Paris to The Pyrenees</a><a id='TUbz8cVzNh0'>TUbz8cVzNh0</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to France for an amazing value night train!
+      
+      Today we will be travelling from the capital, Paris, down to Latour-de-Carol in The Pyrenees mountains, on the border with Spain. These services offer great value shared Couchette beds which is one of the most cost-effective to cross France in comfort. So let's go and check them out together!
+      
+      Many thanks to Ben </p><p><a href='https://www.youtube.com/watch?v=r9VgojGeMVw' target='_blank'>Casablanca to Fes is Morocco's HIDDEN GEM! ONCF Al Atlas Review</a><a id='r9VgojGeMVw'>r9VgojGeMVw</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to Morocco for the first time on the channel!
+      
+      Today we will be taking an old-school Intercity service in a First Class compartment, from the largest city, Casablanca, to the stunning Fes! This route is a real BEAUTY!  Morocco really surprised me with its hospitality and natural beauty, so let's go and discover it together!
+      
+      Date of Filming: 20/3/23
+      Camera: GoPr</p><p><a href='https://www.youtube.com/watch?v=Pl7s5oC0hR8' target='_blank'>Observation Coach on this AMAZING Sri Lanka Railway Journey! (Nine Arch Bridge)</a><a id='Pl7s5oC0hR8'>Pl7s5oC0hR8</a><br/>Click here to check out Level8 & get a 10% discount with code: EUROTRIP10
+      
+      
+      Hello and welcome to Sri Lanka for a remade VOICEOVER review from this spectacular South Asian country!
+      
+      Today we will be riding one of the most scenic routes in Sri Lanka, and seeing one of the country's most popular tourist attractions, for train enthusiasts, Instagrammers and TikTokers alike, the Nine Arch Bridge form both off and onboard the train, so sit back and so I hope</p><p><a href='https://www.youtube.com/watch?v=WEHtmo76k_c' target='_blank'>Spanish HIGHSPEED Trains: The ULTIMATE Guide</a><a id='WEHtmo76k_c'>WEHtmo76k_c</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      #spain #highspeed #train #renfe #ave #avlo #ouigo #iryo
+      
+      Hello and welcome to the ULTIMATE GUIDE of highspeed train transport between Madrid and Barcelona!
+      
+      Today we'll be comparing the four highspeed train operators which run services between Spain's two BIGGEST cities. AVE, AVLO, Ouigo & Iryo have made the Spanish highspeed market the MOST competitive in the world, so let's che</p><p><a href='https://www.youtube.com/watch?v=Bro2lFVdI2k' target='_blank'>The MIND-BLOWING Darjeeling Himalayan Railway!!!</a><a id='Bro2lFVdI2k'>Bro2lFVdI2k</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      #india #westbengal #darjeeling  #dhr #toytrain #himalayas  
+      
+      Hello and welcome back to India!
+      
+      Today's video is one I've been looking forward to for the longest time! We'll be up in the Himalaya Mountains taking a ride on the 'Toy Train' from Darjeeling down to Siliguri. This mesmerising trip will have you in wonder at every stage, from the lack of signal and level crossings, to </p><p><a href='https://www.youtube.com/watch?v=AMyXo3ahAik' target='_blank'>The SURPRISING International Train from Brussels to Luxembourg / SNCB Intercity Review</a><a id='AMyXo3ahAik'>AMyXo3ahAik</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Northern Europe for another international intercity review.
+      
+      Today we'll be riding on the SNCB intercity service from the Belgian capital, Brussels down to the micro-state of Luxembourg. I wasn't expecting too much from this service, but I was pleasantly surprised, although the could definitely do a few things better, so please enjoy the video!
+      
+      Date of </p><p><a href='https://www.youtube.com/watch?v=UB-I-8ZPxn0' target='_blank'>Sunrise Seto Review / Ride Japan's LAST Sleeper Train While You Still Can</a><a id='UB-I-8ZPxn0'>UB-I-8ZPxn0</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Japan for a special sleeper train video!
+      
+      Tonight we'll be riding overnight from Tokyo to Takamatsu, on one half of Japan's LAST Sleeper Train. With the expansion of the Shinkansen Bullet Train network, the need for night trains has been diminishing in Japan, and this is the only regular one left! So do come and ride it while you still can, or just enjoy</p><p><a href='https://www.youtube.com/watch?v=GCm-m-HDK0c' target='_blank'>I travelled by Train from Kyiv to Odesa in UKRAINE</a><a id='GCm-m-HDK0c'>GCm-m-HDK0c</a><br/>All proceeds of this video will be donated to the Ukrainian Crisis Relief Fund to directly help the victims of Putin's illegal invasion. Слава Україні!
+      
+      #ukraine #trains #tarpan #kyiv #odesa 
+      
+      Hello and welcome back to Ukraine!
+      
+      Today we'll be riding from Kyiv to Odesa to explore the fantastic country of Ukraine, from top to bottom, and see what it has to offer. I for one, can;t wait to return after all the invaders have been expelled... enjoy the video!    
+      
+      A HUGE thanks to my Valued Channel M</p><p><a href='https://www.youtube.com/watch?v=3qD4ojYCFEE' target='_blank'>Why I Love South Korea's SUPER RAPID TRAIN / Busan to Seoul</a><a id='3qD4ojYCFEE'>3qD4ojYCFEE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      #korea #southkorea #srt #superrapidtrain #ktx #korail #highspeedtrain #train 
+      
+      Hello and welcome back to South Korea for a exciting highspeed train video!
+      
+      Today we'll be travelling from South Korea's second largest city, Busan to the capital, Seoul on the country's private highspeed operator, SRT. Offering some stiff competition to the national operator Korail, and their highspe</p><p><a href='https://www.youtube.com/watch?v=vdnE18UYo2k' target='_blank'>SINGAPORE to KUALA LUMPUR / Train VS Plane VS Bus</a><a id='vdnE18UYo2k'>vdnE18UYo2k</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to  a new voiceover video of the ultimate guide of transport between Singapore and Kuala Lumpur!
+      
+      Today we'll be comparing the Train, Plane and Bus options between the stunning Southeast Asian city state, and the bustling Malaysian capital city. These are two very different, but equally amazing cities with many transport links between them, so please enjoy my vi</p><p><a href='https://www.youtube.com/watch?v=VeI17Qwb9mU' target='_blank'>Egypt's "LUXURY" Tourist Sleeper Train: Cairo to Luxor</a><a id='VeI17Qwb9mU'>VeI17Qwb9mU</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to Egypt for another video from North Africa!
+      
+      Tonight we'll be taking the famous Watania Deluxe Sleeper Train from the capital, Cairo down the Nile, to the ancient city of Luxor in a private compartment. All meals are included so let's check out how Egypt does night trains... I do hope you enjoy the video!
+      
+      Date of Filming: 4 to 5/3/23
+      Camera: GoPro Hero 10 Bla</p><p><a href='https://www.youtube.com/watch?v=R4QWzZyrsS4' target='_blank'>Swedish Railways BROKE THE LAW!!! Let me Explain...</a><a id='R4QWzZyrsS4'>R4QWzZyrsS4</a><br/>This is not your normal Nonstop Eurotrip video. And it's sad that this video has had to be made...
+      
+      This is a video from my good friend @Simon-Andersen explaining what happened to him, and his fellow passengers, when their SJ Sleeper Train from Stockholm to Hamburg, failed to stop for them at Copenhagen Airport on the night of the 26th/27th May 2023.
+      
+      Then follows a quite comical exchange of phone calls, emails and tweets from SJ blaming everyone but themselves, refusing to follow EU law, and th</p><p><a href='https://www.youtube.com/watch?v=tit1QJF4kcE' target='_blank'>India's HOMEGROWN Highspeed Trains / Vande Bharat Express from Varanasi to Delhi</a><a id='tit1QJF4kcE'>tit1QJF4kcE</a><br/>Click here to check out Level8 & get a 10% discount with code: EUROTRIP10
+      
+      
+      Hello and welcome back to India for a VERY highly requested video... this time with VOICEOVER!
+      
+      Today we'll be riding India's Homegrown 'Highspeed' Train, the Vande Bharat Express on its original route from the holy city of Varanasi to the capital, New Delhi. There's many great things about this service, but as you'll see, some things need to be improved and maintained much bet</p><p><a href='https://www.youtube.com/watch?v=1BSKgM_zReY' target='_blank'>One of Europe's GREAT International Trains / PKP EuroCity from Berlin to Warsaw</a><a id='1BSKgM_zReY'>1BSKgM_zReY</a><br/>Check out Safety Wing for great deals on Nomad Travel Insurance: 
+      
+      Hello and welcome back to Germany for an awesome international video and my first VOICEOVER trip report!
+      
+      Today we'll be taking EuroCity EC45, from the German capital, Berlin to the Polish capital, Warsaw. Now this may not be highspeed, or super scenic, but its a very comfortable and environmentally friendly way to travel between t</p><p><a href='https://www.youtube.com/watch?v=1nTp3R6qxJQ' target='_blank'>What's My FAVOURITE Train? 75,000 Subscriber Q&A VOICEOVER Special!</a><a id='1nTp3R6qxJQ'>1nTp3R6qxJQ</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to my First VOICEOVER Video!
+      
+      Today I'll be answering your questions in my 75,000 Subscriber and 200 Video Q&A Special! Thnak you to everyone who submitted questions, and I'm sorry If I didn't get around to answering yours, but please enjoy this new style of video, with some fresh new graphics too!    
+      
+      A HUGE thanks to my Valued Channel Members:
+      Pedro Rubio Tej</p><p><a href='https://www.youtube.com/watch?v=5gAvby5JiWE' target='_blank'>London to Amsterdam by Train in JUST 4 HOURS / Eurostar Review</a><a id='5gAvby5JiWE'>5gAvby5JiWE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to the UK for a highspeed international train review!
+      
+      Today we'll be travelling in the cheapest available seats from London, UK to Amsterdam, Netherlands through the engineering marvel that is the Channel Tunnel, the Great Britain's only fixed link to mainland Europe. So come along and let's go for a 300kmh ride, so sit back and enjoy the video!
+      
+      Date of F</p><p><a href='https://www.youtube.com/watch?v=W0qsr6BLBXQ' target='_blank'>Malaysia Airlines SECRET Business Class / A330 from Kathmandu to Kuala Lumpur</a><a id='W0qsr6BLBXQ'>W0qsr6BLBXQ</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Nepal for a special plane review!
+      
+      We'll be taking the amazingly comfy, and superb value Malaysia Airlines A330 Business Class from Kathmandu down to Kuala Lumpur. There's superb lie-flat seats, tasty food and great service, so join me and I hope you enjoy the video!
+      
+      Date of Filming: 16/7/22
+      Camera: GoPro Hero 10 Black
+      Operator: Malaysia Airlines
+      Depart</p><p><a href='https://www.youtube.com/watch?v=Rn7Zjagv_yw' target='_blank'>First Class on the AMAZING Brenner Pass Express</a><a id='Rn7Zjagv_yw'>Rn7Zjagv_yw</a><br/>Thanks to ExpressVPN for sponsoring today's video. Go to https://strms.net/expressvpn_nonstopeurotrip to get your first 3 months free! #ad
+      Click here to join Express VPN now, and get 3 MONTHS FREE:
+      https://strms.net/expressvpn_nonstopeurotrip
+      
+      Hello and welcome back to Austria for another super scenic International EuroCity trip report from Austria to Italy!
+      
+      Today we will be taking EC81, the Munich to Bologna EuroCity which traverses the beautifulBrenner pass, the lowest mountain pass in the Al</p><p><a href='https://www.youtube.com/watch?v=QAPtSuI3FhE' target='_blank'>Why Iryo is Spain's NEW BEST TRAIN / First Class Review from Madrid to Málaga</a><a id='QAPtSuI3FhE'>QAPtSuI3FhE</a><br/>Click here to get a £5 discount and 20% off any UK Railcard at Trip.com:
+      https://www.trip.com/t/ytbNonstopEuro & Enter Promo Code: RC2024
+      
+      Hello and welcome back to Spain where we're going to be checking out a new operator on a recently launched route!
+      
+      Today we will be taking Iryo, the newest open-access operator on the Iberian peninsular, and one that Renfe should be REALLY worried about. This was filmed on the second day of operations on the Madrid to Málaga route, and I travelled in their hi</p><p><a href='https://www.youtube.com/watch?v=JxypgNPOtkw' target='_blank'>India's CUTEST Train / Riding The Chennai Railway Museum Railway</a><a id='JxypgNPOtkw'>JxypgNPOtkw</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to India for a special bonus video on the channel!
+      
+      This is just a little April 1st easter egg video that I filmed on my recent trip to India. Something totally different which I thought you guys might like, so I hope you enjoy the video!
+      
+      Date of Filming: 17/1/23
+      Camera: GoPro Hero 10 Black
+      Operator: Chennai Railway Museum
+      Departure: Chennai Railway Museum
+      Arri</p><p><a href='https://www.youtube.com/watch?v=skowG_eqA5k' target='_blank'>AMAZING Train, STUNNING Railway / One of Switzerland's BEST train trips!</a><a id='skowG_eqA5k'>skowG_eqA5k</a><br/>Click here to check out Level8 & get a 10% discount with code: EUROTRIP10
+      
+      
+      Hello and welcome back to Switzerland for another super scenic trip in train lover's paradise!
+      
+      Today we will be riding an AMAZING Stadler FLIRT EMU on the original Gotthard Railway. These SOB Treno Gottardo routes include some of the best scenery Switzerland has to offer, so I hope you enjoy the video!
+      
+      Date of Filming: 12/9/21
+      Camera: GoPro Hero 7 Black
+      Operator: Südostbahn
+      D</p><p><a href='https://www.youtube.com/watch?v=_58z3RGoSAA' target='_blank'>The Train to PORTUGUESE PARADISE / Sintra to Lisbon Review</a><a id='_58z3RGoSAA'>_58z3RGoSAA</a><br/>Head to www.manscaped.com and use the code EUROTRIP for a 20% discount and FREE Worldwide Shipping #Manscaped
+      
+      Hello and welcome back to Portugal, we've not been here for a while!
+      
+      Today we'll be checking out the fast, frequent and great value Lisbon Urbanos network, on a trip from the magical town of Sintra, back to Portugal's stunning capital, Lisbon. I hope you enjoy the video!
+      
+      Date of Filming: 24/5/21
+      Camera: GoPro Hero 7 Black
+      Operator: CP (Portuguese Railways)
+      Departure: Sintra, Portugal
+      </p><p><a href='https://www.youtube.com/watch?v=f5k2JXdVDgg' target='_blank'>Egypt's BRAND NEW Spanish Talgo Trains / Cairo to Alexandria in First Class</a><a id='f5k2JXdVDgg'>f5k2JXdVDgg</a><br/>Click here to check out Level8 & get a 10% discount with code: EUROTRIP10
+      
+      
+      Hello and welcome to Egypt for the first of a three video series, and my first video from the whole of the African continent!
+      
+      These newly launched Talgo trains are a massive step forward for Egypt, bringing them right up to date with European Railway's comfort and safety standards. I'd been looking forward to checking these trains out for a while, and they certainly didn't dis</p><p><a href='https://www.youtube.com/watch?v=SOWQEBlREvU' target='_blank'>3 DAYS in First Class on an Indian Train... as bad as everyone says? Bengaluru to Delhi</a><a id='SOWQEBlREvU'>SOWQEBlREvU</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to India for the first of many reviews from this fascinating country!
+      
+      I thought I'd start with a BANG, and take you on a 3 day / 2 night / 2600km First Class sleeper train experience from Bengaluru / Bangalore to New Delhi. It's an epic journey crossing a big chunk of India in a private, First Class, 2-bed sleeper compartment. So come along and get the full Ind</p><p><a href='https://www.youtube.com/watch?v=QIWPXTEzhDI' target='_blank'>Is This The World's WORST Train? Cambodian Railways / Phnom Penh to Battambang</a><a id='QIWPXTEzhDI'>QIWPXTEzhDI</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to Cambodia for the first, and probably only time!
+      
+      Today we'll be checking one of only two regularly scheduled routes in this Southeastern Asian country, from the capital Phnom Penh, to the northern city of Battambang, where we'll see the world famous 'Bamboo Railway'... I hope you enjoy the video!
+      
+      Date of Filming: 28/9/22
+      Camera: GoPro Hero 10 Black
+      Operator:</p><p><a href='https://www.youtube.com/watch?v=72ZvArEpG28' target='_blank'>PARIS to MILAN @ 300kmh / Frecciarossa 1000 Executive Class</a><a id='72ZvArEpG28'>72ZvArEpG28</a><br/>Download the TrainPal App Today #TrainPal #Railcard
+      Save 5% on UK Rail Tickets using code: UK007 & 34% on UK Railcards using code: EUROTRIP
+      https://mytrainpal.onelink.me/q1rp/kd62m9jbpid=social&af_siteid=youtube&campaign=media
+      
+      Hello and welcome back to France!
+      
+      Today we'll be checking out a recently launched international service by the Italian national operator, from the French Capital, to the Italian fashion capital. There trains are some of my favourite in Europe, and Executive Class is the </p><p><a href='https://www.youtube.com/watch?v=5rqjKeVxLzs' target='_blank'>FIRST CLASS on Sweden's Flagship X2000 / Gothenburg to Stockholm Review</a><a id='5rqjKeVxLzs'>5rqjKeVxLzs</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Sweden!
+      
+      Tonight we will be trying out SJ's flagship train, the X2000 in First Class. We'll be taking the most travelled route in the country, from Gothenburg to Stockholm to see how the national operator compares to FlixTrain and MTRX who both also run services on this route... I hope you enjoy the video!
+      
+      Date of Filming: 3/10/21
+      Camera: GoPro Hero 7 B</p><p><a href='https://www.youtube.com/watch?v=16CJpxkHudA' target='_blank'>Japanese Sleeper Bus with 11 PRIVATE LUXURY Bedrooms / Osaka to Tokyo</a><a id='16CJpxkHudA'>16CJpxkHudA</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Japan!
+      
+      Tonight we'll be taking one of the most luxurious sleeper buses in the world, which has just 11 private bedrooms on Japan's MOST travelled city pair, Osaka to Tokyo. It's a great alternative to the famous Shinkansen, and you save on a hotel room too... I hope you enjoy the video!
+      
+      Date of Filming: 23 to 24/11/22
+      Camera: GoPro Hero 10 Black
+      Operat</p><p><a href='https://www.youtube.com/watch?v=7wapQcogcGE' target='_blank'>Thailand FIRST CLASS Private Sleeper / Bangkok to Surat Thani</a><a id='7wapQcogcGE'>7wapQcogcGE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Thailand for my first sleeper train adventure in the country!
+      
+      Today we'll be taking an overnight ride in a private first class compartment, from Bangkok to Surat Thani, gateway to the islands of Koh Phanang & Koh Samui, two of the biggest Thai holiday hotspots... I hope you enjoy the video!
+      
+      Date of Filming: 29 to 30/8/22
+      Camera: GoPro Hero 10 Black
+      Ope</p><p><a href='https://www.youtube.com/watch?v=ORBSh5trPn8' target='_blank'>The BEST Train Seat in Austria / ÖBB Business Class Review / Salzburg to Innsbruck</a><a id='ORBSh5trPn8'>ORBSh5trPn8</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to beautiful Austria!
+      
+      We're going to be riding on Austria's Premier train service... ÖBB Railjet in Business Class. We'll be travelling between Salzburg and Innsbruck, through some stunning mountainous terrain in the most luxurious seat that the country has to offer... I hope you enjoy the video!
+      
+      Date of Filming: 8/9/22
+      Camera: GoPro Hero 7 Black
+      Operator</p><p><a href='https://www.youtube.com/watch?v=79bk1xqremY' target='_blank'>Snow, Ice & -20°C, but the trains still RUN ON TIME / VR Finland 'G' Train Review</a><a id='79bk1xqremY'>79bk1xqremY</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to snowy Finland today!
+      
+      We're going to be checking out the 'G' train, one of the commuter lines to the North of Helsinki and find our how, despite the harsh winters of endless snow, ice and -20 degree temperatures, the railways keep running on time in Finland... I hope you enjoy the video!
+      
+      Date of Filming: 30/1/22
+      Camera: GoPro Hero 10 Black
+      Operator: VR </p><p><a href='https://www.youtube.com/watch?v=l8kGDZ9h2_I' target='_blank'>Europe's WEIRDEST Train / NS ICM Koploper First Class Review</a><a id='l8kGDZ9h2_I'>l8kGDZ9h2_I</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to The Netherlands for a trip from Rotterdam to Utrecht!
+      
+      Today we'll be riding a train that is certainly very unique, and one that I've wanted to ride for a long time. The NS Koploper has been on my 'to-do' list for quite a while due to its looks, let's find out why that's the case... I hope you enjoy the video!
+      
+      Date of Filming: 6/6/22
+      Camera: GoPro Hero </p><p><a href='https://www.youtube.com/watch?v=VULdsiF_eCY' target='_blank'>If you Only Take One Flight Ever... Make it THIS ONE! Mount Everest Sightseeing Tour</a><a id='VULdsiF_eCY'>VULdsiF_eCY</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to Nepal for the first time on the channel!
+      
+      Now unfortunately due to the lack of railways in this mountainous landlocked central Asian country, we're going to have to make do with a flight today... but what a flight it is! An hour of mega mountain sightseeing on a dedicated flight from Kathmandu... I hope you enjoy the video!
+      
+      Date of Filming: 11/7/21
+      Camera: G</p><p><a href='https://www.youtube.com/watch?v=NlKqLPbxxdE' target='_blank'>Denmark's STRANGE Intercity Train / DSB IC3 From Hamburg to Copenhagen</a><a id='NlKqLPbxxdE'>NlKqLPbxxdE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Denmark! Today we're taking an international service from Hamburg, Germany upto Copenhagen, Denmark.
+      
+      The DSB IC3 DMUs are certainly a strange looking train, aren't they? Well, we'll find out why this is the case and also check out some amazing infrastructure along the route including the spectacular Rendsburg Viaduct and the Great Belt Fixed Link... I h</p><p><a href='https://www.youtube.com/watch?v=CebRUcO8dPE' target='_blank'>STUNNING Norwegian Fjords Cruise / Bergen to Stavanger with Fjordline</a><a id='CebRUcO8dPE'>CebRUcO8dPE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Norway and for my second ever video on the water!
+      
+      Today we're taking an amazing fjords cruise from Bergen to Stavanger along Norway's rugged west coast. It also costs a lot less than you might think... So I do hope you enjoy the video!
+      
+      Date of Filming: 8/5/22
+      Camera: GoPro Hero 10 Black
+      Operator: Fjordline
+      Departure: Bergen, Norway
+      Arrival: Stavanger, </p><p><a href='https://www.youtube.com/watch?v=YyjRUs8rMLE' target='_blank'>Shinkansen GRAN CLASS Review / Japan's MOST EXPENSIVE Train Seat</a><a id='YyjRUs8rMLE'>YyjRUs8rMLE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Japan! Today we're travelling onboard what's widely regarded as the 'Worlds BEST Train Seat' from Sendai to Tokyo.
+      
+      The Shinkansen E5 is JR's fastest train, operating on the Hayabusa services to Hokkaido in the far north. They have this special ultra luxury area, called Gran Class. And quite frankly, it's absolutely insane... I do hope you enjoy the vide</p><p><a href='https://www.youtube.com/watch?v=56yXbIUq1bI' target='_blank'>South Korea's NEWEST Highspeed Train / KTX EUM First Class Review</a><a id='56yXbIUq1bI'>56yXbIUq1bI</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to my first video from SOUTH KOREA!
+      
+      Today we'll be checking out the newest highspeed train in the country, the KTX-EUM, which we'll be riding in First Class from Seoul to Andong. I do hope you enjoy the video!
+      
+      Date of Filming: 30/11/22
+      Camera: GoPro Hero 10 Black
+      Operator: Korail
+      Departure: Seoul, South Korea
+      Arrival: Andong, South Korea
+      Cost:  Green Car - 30,</p><p><a href='https://www.youtube.com/watch?v=ERNITNuF6So' target='_blank'>Malaysia's JUNGLE Sleeper Train / €10 for 16 Hour from Singapore to Thailand</a><a id='ERNITNuF6So'>ERNITNuF6So</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Malaysia! Today we're taking the country's last remaining sleeper train!
+      
+      The 'Jungle Train' as it's locally known travels from Johor Bahru on the Singapore border to Tumpat on the Thailand border travelling up Malaysia's unspoilt east coast. It's a pretty amazing trip! I do hope you enjoy the video!
+      
+      Date of Filming: 2 to 3/8/22
+      Camera: GoPro Hero 10 Bl</p><p><a href='https://www.youtube.com/watch?v=92ovhKunMyo' target='_blank'>Is this Amtrak's MOST SCENIC route? / Coast Starlight from LA to San Francisco</a><a id='92ovhKunMyo'>92ovhKunMyo</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to AMERICA! Today I'm collaborating with Andy from DiscoverByRail.com to bring you this Amtrak Coast Starlight video. It's my first from the USA, and maybe not the last? Enjoy the review!
+      
+      Date of Filming: 1/4/22
+      Camera: iPhone 12
+      Operator: Amtrak
+      Departure: Los Angeles, California
+      Arrival: San Francisco, California
+      Cost:  Roomette - $275 (£225, €261)
+      
+      A HUGE th</p><p><a href='https://www.youtube.com/watch?v=kVb6KaZhCYE' target='_blank'>Stunning Northern Japan on this STRANGE TRAIN: JR Hokuto Limited Express</a><a id='kVb6KaZhCYE'>kVb6KaZhCYE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Japan! Today we're on the northern island of Hokkaido and we'll be taking one of the Limited Express services through some stunning scenery!
+      
+      The JR Hokuto starts from Hakodate at the end of the Shinkansen network and travels along some beautiful coastlines and breathtaking mountains en-route to Sapporo, capital of Hokkaido. I do hope you enjoy the video</p><p><a href='https://www.youtube.com/watch?v=Ts5_HLzW9Mg' target='_blank'>The SUPER SCENIC Centovalli Railway / Domodossola to Locarno in First Class</a><a id='Ts5_HLzW9Mg'>Ts5_HLzW9Mg</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Italy/Switzerland for another special super scenic trip in central Europe!
+      
+      We'll be taking the Centovalli (100 Valley) Railway, an international tourist train which crosses from Italy to Switzerland over some of the most spectacular in the area, using special panoramic trains, so please enjoy!
+      
+      Date of Filming: 12/9/21
+      Camera: GoPro Hero 7 Black
+      Operato</p><p><a href='https://www.youtube.com/watch?v=-nrMMBin5Vw' target='_blank'>Vietnam's MOST LUXURIOUS Sleeper Train / Hanoi to Hue in VIP Class</a><a id='-nrMMBin5Vw'>-nrMMBin5Vw</a><br/>This Video is Sponsored by Ridge Wallet. Check them out here:  https://ridge.com/EUROTRIP & Get 40% off all orders until December 22nd
+      
+      Hello and welcome back to the channel where we're in another NEW country today... VIETNAM!
+      
+      Tonight we'll be taking a luxury VIP sleeper train in a private compartment operated by Violette Trains. It's the most expensive single train ticket that I've ever bought, so I hope you enjoy the video!
+      
+      Date of Filming: 18 to 19/9/22
+      Camera: GoPro Hero 10 Black
+      Operator:</p><p><a href='https://www.youtube.com/watch?v=F7bXqXLULM0' target='_blank'>Japan's FAMOUS BULLET TRAIN on the Tokaido Shinkansen / Worth the HYPE?</a><a id='F7bXqXLULM0'>F7bXqXLULM0</a><br/>This Video is Sponsored by Ridge Wallet. Check them out here:  https://ridge.com/EUROTRIP & Get 40% off all orders until December 22nd
+      
+      Hello and welcome to JAPAN! I've finally make it to highspeed and quirky train HEAVEN!
+      
+      In my first of MANY videos from the land of the Bullet Train, you've guessed it... A BULLET TRAIN! We'll be travelling from Osaka to Shizuoka, near Mt.Fuji in the Green Car, which is Japan speak for First Class. Come along while I tick another item off my bucket list, and rid</p><p><a href='https://www.youtube.com/watch?v=QTSp9P8lspY' target='_blank'>Private VIP COMPARTMENT on Turkey's Flagship Highspeed Train / Istanbul to Ankara</a><a id='QTSp9P8lspY'>QTSp9P8lspY</a><br/>Get 10% off the entire manta sleep range of amazing sleep masks and accessories at this link: https://bit.ly/3VWNh2g and enter code at checkout: EUROTRIP
+      
+      Hello and welcome back to Turkey for another highspeed adventure!
+      
+      Today we are in the largest city, İstanbul, and will be taking TCDD (Turkish Railways) flagship highspeed service to the capital, Ankara. It's one of the best trains around today, so I hope you enjoy the video!
+      
+      Date of Filming: 9/2/22
+      Camera: GoPro Hero 10 Black
+      Operator: TCDD</p><p><a href='https://www.youtube.com/watch?v=Qf7SFS3xQr4' target='_blank'>Amazing NEW RUSSIAN SLEEPER Train from Georgia to Armenia</a><a id='Qf7SFS3xQr4'>Qf7SFS3xQr4</a><br/>Get 10% off the entire manta sleep range of amazing sleep masks and accessories at this link: https://bit.ly/3VWNh2g and enter code at checkout: EUROTRIP
+      
+      Hello and welcome back to another video where we visit two BRAND NEW countries for the first time on the channel!
+      
+      Today we'll be taking the sleeper train from Tbilisi, Georgia to Yerevan, Armenia onboard brand new Russian coaches in Spalny Vagon / First Class... so I hope you enjoy the video!
+      
+      Date of Filming: 19 to 20/2/22
+      Camera: GoPro Hero</p><p><a href='https://www.youtube.com/watch?v=c1jkf9jg6LQ' target='_blank'>FINLAND'S SANTA CLAUS EXPRESS / VR INTERCITY WITH SIDE FACING PANORAMIC SEATING</a><a id='c1jkf9jg6LQ'>c1jkf9jg6LQ</a><br/>Get 10% off the entire manta sleep range of amazing sleep masks and accessories at this link: https://bit.ly/3VWNh2g and enter code at checkout: EUROTRIP
+      
+      Hello and welcome back to Finland for another winter wonderland adventure!
+      
+      Today we are in Lapland, home of Santa Claus and will be taking what I believe is Europe's BEST intercity service. These trains have such a multitude of seating options and an amazing dining car as well... so I hope you enjoy the video!
+      
+      Date of Filming: 1/2/22
+      Camera:</p><p><a href='https://www.youtube.com/watch?v=L4r43L2pu98' target='_blank'>The ALL NEW Laos-China Railway / Southeast Asia's Best Trains</a><a id='L4r43L2pu98'>L4r43L2pu98</a><br/>Easily book GREAT VALUE Asian Flights, Trains, Buses & Ferries with my Baolau link:
+      https://www.baolau.com/?source=nonstopeurotrip
+      
+      Hello and welcome to Laos, for my first (and only!) video from this interesting landlocked Southeast Asian country!
+      
+      I will be reviewing the higher speed railways here, which was built and paid for by China as part of their belt and road initiative. It's certainly an interesting project, with some amazing scenery, so I hope you enjoy the video!
+      
+      Date of Filming: 9/9</p><p><a href='https://www.youtube.com/watch?v=hvpVyVoYCAQ' target='_blank'>#Shorts #GWR #Cardiff #London #Paddington #FirstClass #Class800 #IET #NonstopEurotrip</a><a id='hvpVyVoYCAQ'>hvpVyVoYCAQ</a><br/>This #shorts video was filmed on Great Western Mainline in the #UK from #Cardiff to #London #Paddington in #FirstClass on one of #GWR's #Class800 #IET EMUs, please enjoy!
+      
+      Here is a link to the full video review:
+      https://youtu.be/1_pE5sH62Vg
+      
+      A HUGE thanks to my Valued Channel Members:
+      Pedro Rubio Tejero               Rahill Bhanvadia
+      BilalPlayz                               Mark Jaynes
+      Shouribrata Chakraborty     Tamsen Kirby
+      Amillionbooks                       George Dover
+      Holdymar V. Arndt Jr</p><p><a href='https://www.youtube.com/watch?v=ozzWZOO3NUs' target='_blank'>#Norwegian #Fjords #Ferry #Bergen #Stavanger #Shorts #NonstopEurotrip</a><a id='ozzWZOO3NUs'>ozzWZOO3NUs</a><br/>This #shorts video was filmed on the stunning #fjord #ferry ride from #Bergen to #Stavanger in #Norway. The full video review will be coming soon!
+      
+      A HUGE thanks to my Valued Channel Members:
+      Pedro Rubio Tejero               Rahill Bhanvadia
+      BilalPlayz                               Mark Jaynes
+      Shouribrata Chakraborty     Tamsen Kirby
+      Amillionbooks                       George Dover
+      Holdymar V. Arndt Jr           Florian Booneiam
+      Fabricio Renovato                Linda Vainomae
+      Will Getz          </p><p><a href='https://www.youtube.com/watch?v=ujZCkvXqnII' target='_blank'>A GUIDE TO THAILAND'S AMAZING MARKET TRAIN FOR LESS THAN €1/$1!</a><a id='ujZCkvXqnII'>ujZCkvXqnII</a><br/>Easily book GREAT VALUE Asian Flights, Trains, Buses & Ferries with my Baolau link:
+      https://www.baolau.com/?source=nonstopeurotrip
+      
+      Hello and welcome to Southeast Asia, today we're in Thailand for the first time on the channel to tick off a bucket list item of mine!
+      
+      I will be giving you a step-by-step guide on how to travel from Bangkok, ride the TWO trains where the tracks run straight though markets, see the show from the outside too, and get the full experience for a fraction of the tour gro</p><p><a href='https://www.youtube.com/watch?v=otibMwgrEm4' target='_blank'>How to get from SINGAPORE to KUALA LUMPUR by Train</a><a id='otibMwgrEm4'>otibMwgrEm4</a><br/>Easily book GREAT VALUE Asian Flights, Trains, Buses & Ferries with my Baolau link:
+      https://www.baolau.com/?source=nonstopeurotrip
+      
+      Hello and welcome to Southeast Asia, today we're back in Singapore for an epic train journey!
+      
+      I will be giving you a step-by-step guide on this bargain journey, which involves taking a metro, a bus, and three trains in 12 hours to get from the amazing city state of Singapore, up to the Malaysian capital, Kuala Lumpur, so I hope you enjoy the video!
+      
+      Date of Filming</p><p><a href='https://www.youtube.com/watch?v=01C0borl2Eg' target='_blank'>50,000 SUBSCRIBER Q&A SPECIAL / NONSTOP EUROTRIP</a><a id='01C0borl2Eg'>01C0borl2Eg</a><br/>Easily book GREAT VALUE Asian Flights, Trains, Buses & Ferries with my Baolau link:
+      https://www.baolau.com/?source=nonstopeurotrip
+      
+      Hello and welcome to another Q&A video on the channel!
+      
+      This is certainly a video I never thought I'd be making! Thank you so much to all my channel members, viewers and subscribers for helping me reach this momentous milestone, and for allowing me to continue living my dream, travelling and making these videos for all you guys!
+      
+      A HUGE thanks to my Valued Channel M</p><p><a href='https://www.youtube.com/watch?v=AabOfyH9D_0' target='_blank'>#PetitTrainJaune #SNCF #France #Pyrenees #TER #Shorts #NonstopEurotrip</a><a id='AabOfyH9D_0'>AabOfyH9D_0</a><br/>This #shorts video was filmed in the #Pyrenees #Mountains between #France & #Spain on #LePetitTrainJaune or #TheLittleYellowTrain operated by #SNCF #TER... enjoy! 
+      
+      Here is a link to the full video review:
+      https://www.youtube.com/watch?v=WbRxRJfrJSw&t=7s
+      
+      A HUGE thanks to my Valued Channel Members:
+      Pedro Rubio Tejero               Rahill Bhanvadia
+      BilalPlayz                               Mark Jaynes
+      Shouribrata Chakraborty     Tamsen Kirby
+      Amillionbooks                       George Dover
+      Holdyma</p><p><a href='https://www.youtube.com/watch?v=W5B2l1LaBY4' target='_blank'>#DouroValley #River #Portugal #Porto #Pochinho #Shorts #NonstopEurotrip</a><a id='W5B2l1LaBY4'>W5B2l1LaBY4</a><br/>This #shorts video was filmed on the stunningly #Scenic #DouroValley line from #Porto to #Pochinho in northern #Portugal, truly one of #Europe's best #railway trips, please enjoy!
+      
+      Here is a link to the full video review:
+      https://youtu.be/DuTwfkJfqWU
+      
+      A HUGE thanks to my Valued Channel Members:
+      Pedro Rubio Tejero               Rahill Bhanvadia
+      BilalPlayz                               Mark Jaynes
+      Shouribrata Chakraborty     Tamsen Kirby
+      Amillionbooks                       George Dover
+      Holdymar V.</p><p><a href='https://www.youtube.com/watch?v=Nh0w3rGdMGY' target='_blank'>#Manila #Philippines #Trike #Taxi #Shorts #NonstopEurotrip</a><a id='Nh0w3rGdMGY'>Nh0w3rGdMGY</a><br/>This #shorts video is very different from my others, so far! It was filmed in #Manila capital of The #Philippines onboard one of their famous #trikes which are part of the #taxi system there...
+      
+      A HUGE thanks to my Valued Channel Members:
+      Pedro Rubio Tejero               Rahill Bhanvadia
+      BilalPlayz                               Mark Jaynes
+      Shouribrata Chakraborty     Tamsen Kirby
+      Amillionbooks                       George Dover
+      Holdymar V. Arndt Jr           Florian Booneiam
+      Fabricio Renovato   </p><p><a href='https://www.youtube.com/watch?v=qOgJRDeGzPU' target='_blank'>#Ouigo #España #Barcelona #Madrid #300kmh #Spain #Shorts #nonstopeurotrip</a><a id='qOgJRDeGzPU'>qOgJRDeGzPU</a><br/>This #shorts video was filmed on the highspeed line from #Madrid #Atocha to #Barcelona #Sants in #Spain with low-cost open-access operator #Ouigo #España. 
+      
+      Here is a link to the full video review:
+      https://www.youtube.com/watch?v=gaDr_GEt5hc
+      
+      A HUGE thanks to my Valued Channel Members:
+      Pedro Rubio Tejero               Rahill Bhanvadia
+      BilalPlayz                               Mark Jaynes
+      Shouribrata Chakraborty     Tamsen Kirby
+      Amillionbooks                       George Dover
+      Holdymar V. Arndt Jr</p><p><a href='https://www.youtube.com/watch?v=5UGKtU98Y9I' target='_blank'>#Bergensbanen #Oslo #Bergen #Norway #Scenic #Train #Shorts #NonstopEurotrip</a><a id='5UGKtU98Y9I'>5UGKtU98Y9I</a><br/>This #shorts video was filmed on the stunning #vy #bergensbanen from #oslo to #bergen in #norway in beautiful #snowy conditions on this ultra #scenic route!
+      
+      Here is a link to the full video review:
+      https://youtu.be/Q_NBKTaQqiY
+      
+      A HUGE thanks to my Valued Channel Members:
+      Pedro Rubio Tejero               Rahill Bhanvadia
+      BilalPlayz                               Mark Jaynes
+      Shouribrata Chakraborty     Tamsen Kirby
+      Amillionbooks                       George Dover
+      Holdymar V. Arndt Jr           Flo</p><p><a href='https://www.youtube.com/watch?v=1tW2MCZwaJk' target='_blank'>RENFE AVANT S114 'NEW PENDOLINO' REVIEW / VALLADOLID TO MADRID IN SPAIN</a><a id='1tW2MCZwaJk'>1tW2MCZwaJk</a><br/>GET 5% DISCOUNT ON ALL SPANISH TRAIN TICKETS  BY BOOKING THROUGH MY OMIO LINK AND USING USING THE CODE: SPAIN2022         LINK: 
+      
+      Hello and welcome to another video from Spain on the channel!
+      
+      Today we will be taking a very underestimated highspeed train, in my opinion the Renfe Avant S114 'New Pendolino' EMU. It's a full trip on the highspeed line from the beautiful Valladolid to the capital, Madrid so I hope you enjoy the video!
+      
+      Date of Filming: 1/6/22
+      Camera: GoPro </p><p><a href='https://www.youtube.com/watch?v=WwWNriiqYno' target='_blank'>EUROPE'S BEST REGIONAL TRAIN / NATIONAL EXPRESS RHINE RUHR EXPRESS REVIEW</a><a id='WwWNriiqYno'>WwWNriiqYno</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to another video from Germany on the channel!
+      
+      Today we will be taking what I think, is Europe's BEST regional train.  We'll be travelling with National Express on their Rhine Ruhr Express RE5 service in First Class, but we'll be taking a look at the very well equipped and flashy train... enjoy the video!
+      
+      Date of Filming: 25/9/21
+      Camera: GoPro Hero 7
+      Operator: </p><p><a href='https://www.youtube.com/watch?v=Q_NBKTaQqiY' target='_blank'>THE BERGENSBANEN: NORWAY'S MOST SCENIC RAILWAY JOURNEY</a><a id='Q_NBKTaQqiY'>Q_NBKTaQqiY</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to another video from Norway on the channel!
+      
+      Today we will be taking one of my top 5 most favourite train trips ever, the stunningly beautiful Bergensbanen, recently voted 'Europe's 2nd Most Scenic Railway Journey'. We will travel in a comfortable Second Class coach from Norway's capital, Oslo, winding our way past mountains and alongside Fjords, to Bergen on t</p><p><a href='https://www.youtube.com/watch?v=gZrVkPOwXIg' target='_blank'>SWITZERLAND'S BEST TRAIN? / SBB ICN FIRST CLASS REVIEW FROM GENEVA TO ZÜRICH</a><a id='gZrVkPOwXIg'>gZrVkPOwXIg</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to another video from Switzerland on the channel!
+      
+      Today we will be taking one SBB's tilting ICN Intercity EMUs, on an IC5 service from Geneva to Zürich. As are most train journeys in this Rail Lover's Paradise, this is a beautifully scenic affair; encompassing stunning blue lakes and tall majestic mountains... enjoy the video!
+      
+      Date of Filming: 13/9/21
+      Camera: </p><p><a href='https://www.youtube.com/watch?v=G7pctqcZw-Y' target='_blank'>JUST €12 FOR 4.5 IN BUSINESS CLASS / TCDD YHT REVIEW FROM KONYA TO ISTANBUL IN TURKEY</a><a id='G7pctqcZw-Y'>G7pctqcZw-Y</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to another video from Turkey on the channel!
+      
+      Today we will be taking one of the Spanish-built CAF YHT trains from the holy city of Konya, up to the largest city İstanbul. Turkey is not known for its highspeed trains, but it is certainly building a good network day by day... enjoy the video!
+      
+      Date of Filming: 15/2/22
+      Camera: GoPro Hero 10
+      Operator: TCDD
+      Departur</p><p><a href='https://www.youtube.com/watch?v=L5tawUAg3WQ' target='_blank'>THE BEST CONNECTION BETWEEN 2 EU CAPITALS / GYSEV REX REVIEW FROM BRATISLAVA TO VIENNA</a><a id='L5tawUAg3WQ'>L5tawUAg3WQ</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to another international video on the channel!
+      
+      Today we will be taking one of the most frequent and convenient trains between 2 EU capital cities. Bratislava and Vienna and served by 2 different train lines, and multiple daily connections. This is the electrified line, and in my opinion, the best one... enjoy the video!
+      
+      Date of Filming: 5/9/21
+      Camera: GoPro He</p><p><a href='https://www.youtube.com/watch?v=1_pE5sH62Vg' target='_blank'>THE UK'S NEW HIGHSPEED TRAINS: IS ALL THE HATE JUSTIFIED? / GWR CLASS 800 FIRST CLASS REVIEW</a><a id='1_pE5sH62Vg'>1_pE5sH62Vg</a><br/>Get a 34% OFF Discount Code of Digital Railcards on the Trip.com app.
+      Click here: https://www.trip.com/trains/activity/2022/campaign/NONSTOP_EUROTRIP?allianceid=3305672&sid=18388423
+      
+      Use the 5% OFF Discount Code to book train tickets: “Nonstop”
+      Click here: https://uk.trip.com/trains/eurotrains/?allianceid=3305672&sid=18388423
+      
+      (How to use: Trip.com website or app → book train tickets → promo code → enter Nonstop)
+      
+      Hello and welcome to the first UK video on the channel!
+      
+      Today we will be taking o</p><p><a href='https://www.youtube.com/watch?v=C6_TbRrpUS8' target='_blank'>GERMANY'S TILTING HIGHSPEED TRAIN / DB ICE-T FIRST CLASS REVIEW</a><a id='C6_TbRrpUS8'>C6_TbRrpUS8</a><br/>Check out RatePunk for GREAT savings on hotels:
+      https://www.ratepunk.com/NonstopEurotrip
+      
+      Hello and welcome to another German highspeed train review on the channel!
+      
+      Today we will be taking one of DB ICE-T highspeed tilting trainsets from Leipzig across Germany to Frankfurt. We have a special seat in First Class, situated right behind the cab! I hope you enjoy the video!
+      
+      Date of Filming: 23/9/21
+      Camera: GoPro Hero 7 Black
+      Operator: DB
+      Departure: Leipzig Hbf, Germany
+      Arrival: Frankfurt (Main) Hb</p><p><a href='https://www.youtube.com/watch?v=VswwGfJD2Nw' target='_blank'>THE WORLD'S MOST LUXURIOUS BUS / SINGAPORE TO KUALA LUMPUR TRANSTAR SOLITAIRE SUITES REVIEW</a><a id='VswwGfJD2Nw'>VswwGfJD2Nw</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to the first video from Southeast Asia on the channel!
+      
+      Today we will be taking what is widely regarded as 'The Worlds Most Luxurious Bus' from Singapore City, up to the Malaysian capital, Kuala Lumpur. These buses have 18 solo massage seats and free food and drinks, it's quite a ride... enjoy the video!
+      
+      Date of Filming: 28/7/22
+      Camera: GoPro Hero 10 Black
+      Oper</p><p><a href='https://www.youtube.com/watch?v=HP4opFVekwY' target='_blank'>300KMH  FROM AMSTERDAM TO BRUSSELS / THALYS PREMIUM CLASS REVIEW</a><a id='HP4opFVekwY'>HP4opFVekwY</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to The Netherlands, for another highspeed international train review on the channel!
+      
+      Today we will be taking the Thalys service, in Premium Class between two of Europe's capital cities, Amsterdam and Brussels. Thalys have a reputation for not always giving the best customer service, so let's see if that's justified... I hope you enjoy the video!
+      
+      Date of F</p><p><a href='https://www.youtube.com/watch?v=22LGSFsaeZE' target='_blank'>Austria's FANTASTIC Double Decker Sleeper Train / Vienna to Zürich with ÖBB Nightjet</a><a id='22LGSFsaeZE'>22LGSFsaeZE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Austria, for another sleeper train review on the channel!
+      
+      Today we will be taking the ÖBB Nightjet service between Vienna and Zürich. This is one of only 2 Nightjet routes that use double decker sleeper cars, and I'll be in a private room tonight, so I hope you enjoy the video!
+      
+      Date of Filming: 24 to 25/2/21
+      Camera: GoPro Hero 10 Black
+      Operator: ÖBB (A</p><p><a href='https://www.youtube.com/watch?v=EqCqBSeicUY' target='_blank'>SWEDEN'S NEWEST HIGHSPEED TRAIN / SJ3000 FIRST CLASS REVIEW</a><a id='EqCqBSeicUY'>EqCqBSeicUY</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome back to Sweden, for a review on the country's newest highspeed train!
+      
+      Today we will be taking the SJ (Swedish Railways) service in First Class from Stockholm to Umeå, a 7 hour trip up Sweden's stunning east coast... I hope you enjoy the video!
+      
+      Date of Filming: 2/10/21
+      Camera: GoPro Hero 7 Black
+      Operator: SJ (Swedish Railways)
+      Departure: Stockholm, Sweden
+      Arriv</p><p><a href='https://www.youtube.com/watch?v=doZXhZou4wc' target='_blank'>THIS HIGHSPEED TRAIN WAS NEARLY SCRAPPED AFTER JUST 1 MONTH IN SERVICE / TRENITALIA ETR700 REVIEW</a><a id='doZXhZou4wc'>doZXhZou4wc</a><br/>Check out RatePunk for GREAT deals on hotels this Summer:
+      https://www.ratepunk.com/NonstopEurotrip
+      
+      Hello and welcome back to Italy, for an exciting video aboard a highspeed train that very nearly doesn't exist today!
+      
+      Today we will be travelling in Business Class onboard one of Trenitalia's ill-fated ETR700 EMUs from Bologna to Pescara along the stunning Adriatic Coast. These trains used to be know as the Fyra V250 and were due to run highspeed services from Amsterdam to Brussels, but these cea</p><p><a href='https://www.youtube.com/watch?v=19E1ctsoaAA' target='_blank'>ECOLINES / GREAT VALUE & HIGH QUALITY INTERNATIONAL COACH TRAVEL / WRLOCLAW TO PRAGUE REVIEW</a><a id='19E1ctsoaAA'>19E1ctsoaAA</a><br/>Book International Coach Tickets Direct with Ecolines for the BEST Prices! Click Here: https://www.ecolines.net OR on the App.
+      
+      Hello and welcome to Poland, for a review on Ecolines, the great value International Coach Service!
+      
+      Today we will be travelling on one of their double decker coaches from Wroclaw, Poland to Prague, Czech Republic. These coaches offer great comfort, food, drinks and entertainment, I hope you enjoy the video!
+      
+      Date of Filming: 15/6/22
+      Camera: GoPro Hero 10 Black
+      Operator</p><p><a href='https://www.youtube.com/watch?v=JcjDSRvJf8o' target='_blank'>GREECE'S PREMIER TRAIN SERVICE IN FIRST CLASS / TRAINOSE ATHENS TO THESSALONIKI REVIEW</a><a id='JcjDSRvJf8o'>JcjDSRvJf8o</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link 
+      
+      Hello and welcome to Greece, for a review on the country's premier train service!
+      
+      Today we will be taking the TrainOSE (Greek Railways) cross-country intercity service in a 4-seat First Class compartment from Athens to Thessaloniki, 530km across Greece... I hope you enjoy the video!
+      
+      Date of Filming: 14/7/21
+      Camera: GoPro Hero 7 Black
+      Operator: TrainOSE (Greek Railways)
+      Departur</p><p><a href='https://www.youtube.com/watch?v=UOJCL1w-Bs8' target='_blank'>NORWEGIAN SLEEPER TRAIN FROM THE FJORDS TO THE CAPITAL / GOAHEAD NORDIC STAVANGER TO OSLO REVIEW</a><a id='UOJCL1w-Bs8'>UOJCL1w-Bs8</a><br/>Get Surfshark VPN at https://surfshark.deals/eurotrip - Enter promo code EUROTRIP for 83% off + 3 months & Antivirus for FREE!
+      
+      Hello and welcome to Norway, for my first review from this interesting Scandinavian country!
+      
+      Today we will be taking GoAhead Nordic's excellent sleeper train service, in a private compartment from Stavanger, in the Norwegian Fjords, across to the capital, Oslo, so I hope you enjoy the video!
+      
+      Date of Filming: 8 to 9/5/22
+      Camera: GoPro Hero 10 Black
+      Operator: GoAhead No</p><p><a href='https://www.youtube.com/watch?v=qFS7t9SwaDc' target='_blank'>EUROPE'S MOST LUXURIOUS BUS / LUXEXPRESS FROM RIGA, LATVIA TO VILNIUS, LITHUANIA</a><a id='qFS7t9SwaDc'>qFS7t9SwaDc</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to Latvia, for another long-awaited bus review on the channel!
+      
+      Today we will be taking LuxExpress onboard one of their 'Lounge Coaches' in 'Relax Class' from Riga, Latvia down to Vilnius, Lithuania. It really impressed me. I hope you enjoy the video!
+      
+      Date of Filming: 19/5/22
+      Camera: GoPro Hero 10 Black
+      Operator: LuxExpress
+      Departure: Riga, Latvia
+      Arrival: Viln</p><p><a href='https://www.youtube.com/watch?v=8D1WhdE-3bg' target='_blank'>Santa Claus LAPLAND EXPRESS / VR Finland Deluxe En-suite Sleeper Train Review</a><a id='8D1WhdE-3bg'>8D1WhdE-3bg</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to Finland, for another review from this stunning country!
+      
+      Today we will be taking VR's special 'Lapland Express' sleeper train in a deluxe en-suite cabin nearly 900km from Helsinki to Rovaniemi. It's a really great train, and a special trip so I hope you enjoy the video!
+      
+      Date of Filming: 30 to 31/1/22
+      Camera: GoPro Hero 10 Black
+      Operator: VR
+      Departure: Helsin</p><p><a href='https://www.youtube.com/watch?v=r2yvvoFJLJU' target='_blank'>PENDOLINO PERFECTION IN POLAND / PKP EIP IN FIRST CLASS / WARSAW TO KRAKÓW</a><a id='r2yvvoFJLJU'>r2yvvoFJLJU</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Poland for another review on the channel.
+      
+      Today we're in the capital, Warsaw, and we'll be taking the PKP (Polish Railways) flagship EIP service, aboard one of their 'New Pendolino' trainsets down to the second city, Kraków... enjoy the video!
+      
+      Date of Filming: 19/9/21
+      Camera: GoPro Hero 7 Black
+      Operator: PKP
+      Departure: Warsaw, Poland
+      Arrival: Kraków, P</p><p><a href='https://www.youtube.com/watch?v=UARNA76Gzqc' target='_blank'>TRIESTE TO VENICE BY LOCO-HAULED TRENITALIA INTERCITY / ITALIAN TRAIN TRIP REPORT</a><a id='UARNA76Gzqc'>UARNA76Gzqc</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Italy for another review on the channel.
+      
+      Today we're in the extreme north-east of the country and will be taking a loco-hauled Trenitalia Intercity from Trieste to Venice. Stay tuned for some magnificent views of stunning Venice at the end... enjoy the video!
+      
+      Date of Filming: 27/8/20
+      Camera: GoPro Hero 7 Black
+      Operator: Trenitalia
+      Departure: Trieste Ce</p><p><a href='https://www.youtube.com/watch?v=LkQlV6c1wIU' target='_blank'>STUNNING SALZBURG CABLE CAR INTO THE UNTERSBERG MOUNTAIN RANGE</a><a id='LkQlV6c1wIU'>LkQlV6c1wIU</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Austria, for another review from this beautiful country!
+      
+      Today we will be riding the amazing cable car that is the Untersbergbahn into the northernmost massif of the Berchtesgaden Alps. There certainly are some breathtaking views en-route, and from the top... Enjoy the video!
+      
+      Date of Filming: 7/9/21
+      Camera: GoPro Hero 7 Black
+      Operator: Untersbergbahn
+      L</p><p><a href='https://www.youtube.com/watch?v=JX4oe-Qe1LQ' target='_blank'>FIRST CLASS FROM VIENNA TO SALZBURG ONBOARD WESTBAHN'S BRAND NEW TRAINS</a><a id='JX4oe-Qe1LQ'>JX4oe-Qe1LQ</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Austria, for another review from this beautiful country!
+      
+      Today we will be trying out private operator Westbahn, and their NEW (when I filmed it!) trains, and also the NEW 3-class cabins on Austria's most lucrative route, Vienna to Salzburg... Enjoy the video!
+      
+      Date of Filming: 6/9/21
+      Camera: GoPro Hero 7 Black
+      Operator: Westbahn
+      Departure: Wien Wbf, Aus</p><p><a href='https://www.youtube.com/watch?v=G59QL8iAKVE' target='_blank'>£16 FOR A 12 HOUR SLEEPER TRAIN ACROSS TURKEY IN A PRIVATE ROOM / TCDD IZMIR TO KONYA</a><a id='G59QL8iAKVE'>G59QL8iAKVE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to Turkey, for my first review from this interesting country, and indeed from Asia!
+      
+      Today we will be taking on of TCDD, the national operator's sleeper trains from the Aegean Coast city of İzmir, 12.5 hours over to the countries most holy city, Konya. This is almost certainly the best value sleeper I've ever been on, and probably will ever go on...enjoy the vid</p><p><a href='https://www.youtube.com/watch?v=tu_yOqFj3eo' target='_blank'>A SCENIC SNOWY RIDE ABOARD VR FINLAND'S FANTASTIC PENDOLINOS / KAJAANI TO HELSINKI IN FIRST CLASS</a><a id='tu_yOqFj3eo'>tu_yOqFj3eo</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to Finland, for my first review from this stunning country!
+      
+      Today we will be taking VR's flagship Pendolino tilting train in First Class from Kajaani in central Finland, down to the capital Helsinki. It's a very snowy day out there, which makes for some spectacular scenery... Enjoy the video!
+      
+      Date of Filming: 2/2/22
+      Camera: GoPro Hero 10 Black
+      Operator: VR
+      Dep</p><p><a href='https://www.youtube.com/watch?v=YZTmP6zpuFw' target='_blank'>THE SUPER SCENIC NARROW GAUGE NORTH COAST OF SPAIN / RENFE FEVE REVIEW</a><a id='YZTmP6zpuFw'>YZTmP6zpuFw</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Spain for a narrow gauge review on the channel!
+      
+      Today we will taking a Renfe Feve service from Ferrol to Oviedo along Spain's super scenic north coast. This 7 hour journey has got to be in my Top 5 of beautiful railway trips within Europe... Enjoy the video!
+      
+      Date of Filming: 29/5/21
+      Camera: GoPro Hero 7 Black
+      Operator: Renfe Feve
+      Departure: Ferrol, Spa</p><p><a href='https://www.youtube.com/watch?v=tKTryIrVp0Y' target='_blank'>30K SUBSCRIBERS & 4 MILLION VIEWS Q&A SPECIAL & COMPETITION TIME!</a><a id='tKTryIrVp0Y'>tKTryIrVp0Y</a><br/>**ALL AD REVENUE FROM THIS VIDEO WILL BE DONATED TO THE UKRAINIAN RED CROSS, ALONG WITH EVERY ONE OF MY UKRAINIAN VIDEOS, UNTIL FURTHUR NOTICE**
+      
+      Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to my 30,000 subscribers & 4 million views Q&A special! There's also a competition within the video!
+      
+      Thank you so much to everyone who has watched, liked and subscribed to my videos, I genuinely am so grateful that I </p><p><a href='https://www.youtube.com/watch?v=_fPUzmG9EZg' target='_blank'>FRANCE'S OLD SCHOOL INTERCITY / BORDEAUX TO MARSEILLE SNCF INTERCITÉS REVIEW</a><a id='_fPUzmG9EZg'>_fPUzmG9EZg</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to France for an Intercity review on the channel!
+      
+      Today we will be riding on one of SNCF's old school Intercités loco-hauled services from Bordeaux to Marseille in the South of France. These trains may be old, but they're still great fun... Enjoy the video!
+      
+      Date of Filming: 22/7/20
+      Camera: GoPro Hero 7 Black
+      Operator: SNCF
+      Departure: Bordeaux, France
+      Arri</p><p><a href='https://www.youtube.com/watch?v=YgRorpQU_S8' target='_blank'>THE WORLD'S OLDEST TRAMS / RIDING LINE 1 IN MILAN ITALY</a><a id='YgRorpQU_S8'>YgRorpQU_S8</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Italy for another tram review on the channel!
+      
+      Today we won't be taking just any tram, but the World's Oldest Tram! (that is left in regular passenger service.) We ride Line 1 from near Milano Centrale station, through the historic city centre, seeing loads of fantastic sights as we go... Enjoy the video!
+      
+      Date of Filming: 11/9/21
+      Camera: GoPro Hero 7 Bl</p><p><a href='https://www.youtube.com/watch?v=TVQen-9A6lA' target='_blank'>Rome to Milan at 300KMH in AMAZING LUXURY / Italo AGV Highspeed Train Review</a><a id='TVQen-9A6lA'>TVQen-9A6lA</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Italy for another highspeed review on the channel!
+      
+      Today we will be taking a highspeed service from Rome to Milan with private operator, Italo We'll be travelling in the very luxurious 'Club Executive' Class, the highest of Italo's 4 classes... Enjoy the video!
+      
+      Date of Filming: 11/9/21
+      Camera: GoPro Hero 7 Black
+      Operator: Italo
+      Departure: Rome, Italy
+      A</p><p><a href='https://www.youtube.com/watch?v=J4Mt4s4EhnA' target='_blank'>FROM BUDAPEST TO LAKE BALATON / MÁV-START HUNGARIAN INTERCITY REVIEW</a><a id='J4Mt4s4EhnA'>J4Mt4s4EhnA</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Hungary for an Intercity review on the channel!
+      
+      Today we will be riding in a MÁV-Start Intercity coach from the capital, Budapest to Tapolca, on the northern shore of the majestic Lake Balaton...Enjoy the video!
+      
+      Date of Filming: 15/8/20
+      Camera: GoPro Hero 7 Black
+      Operator:  MÁV-Start (Hungarian Railways)
+      Departure: Budapest Déli, Hungary
+      Arrival: Tapol</p><p><a href='https://www.youtube.com/watch?v=oTxkoFTU1Ko' target='_blank'>RIDING THE HIGH TATRA CABLE CARS UP SLOVAKIA'S HIGHEST MOUNTAINS</a><a id='oTxkoFTU1Ko'>oTxkoFTU1Ko</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back again to Slovakia where this time we'll be riding the High Tatra Cable Cars!
+      
+      This system of 3 cable cars / gondolas ascend to the summit of Lomnický štít at 2,634m / 8,642ft, Slovakia's 2nd highest mountain. It is easily reached by mainline train from Bratislava or Kosice and the Tarta Mountain Railways... Enjoy the video!
+      
+      Date of Filming: 4/9/21
+      Camera: </p><p><a href='https://www.youtube.com/watch?v=up8wQDKAtO8' target='_blank'>THE SCENIC HIGH TATRA ELECTRIC MOUNTAIN RAILWAY IN SLOVAKIA</a><a id='up8wQDKAtO8'>up8wQDKAtO8</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Slovakia for a slightly different type of video on the channel!
+      
+      Today we will be in the High Tatra Mountains checking out the very scenic Tatra Electric Railway, a network of narrow gauge lines connecting the towns and the Bratislava-Košice mainline trains at Štrba and Poprad-Tatry... Enjoy the video!
+      
+      Date of Filming: 4/9/21
+      Camera: GoPro Hero 7 Black
+      </p><p><a href='https://www.youtube.com/watch?v=ufHXzJh1nR0' target='_blank'>SWITZERLAND'S FLAGSHIP LUXURY TRAINS / SBB STADLER RABe 501 GIRUNO FIRST CLASS FROM LUGANO TO ZURICH</a><a id='ufHXzJh1nR0'>ufHXzJh1nR0</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Switzerland for another review on the channel!
+      
+      Today we will be taking SBB's new flagship train, the RABe 501 Stadler GirunoEMU. These fantastic trains  are 11 coaches long, and run domestic and Eurocity international routes between Switzerland & Italy/Germany. There is some fantastic scenery on this route too... Enjoy the video!
+      
+      Date of Filming: 15/9/</p><p><a href='https://www.youtube.com/watch?v=btWYWlMKEaQ' target='_blank'>WHAT TO EXPECT FROM A 2 DAY TOUR OF THE CHERNOBYL EXCLUSION ZONE</a><a id='btWYWlMKEaQ'>btWYWlMKEaQ</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Ukraine for a very different video on the channel!
+      
+      Today I will be showing you what to expect from a 2-day tour of the Chernobyl nuclear power plant, the exclusion zone around it, and the ghost-town of Pripyat, the nearest large settlement to the disaster. Enjoy the video!
+      
+      Date of Filming: 31/7 to 1/8/21
+      Camera: GoPro Hero 7 Black
+      Location: Chernobyl, </p><p><a href='https://www.youtube.com/watch?v=L47hfzpwxeI' target='_blank'>UKRAINE'S FLAGSHIP TRAIN / UZ INTERCITY PLUS FIRST CLASS FROM LVIV TO KYIV</a><a id='L47hfzpwxeI'>L47hfzpwxeI</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Ukraine for another review on the channel!
+      
+      Today we will be taking UZ's flagship service, the Intercity Plus from Lviv in the west, to the capital, Kyiv. I think you might be surprised at just how good this train is, and what it has to offer... Enjoy the video!
+      
+      Date of Filming: 22/9/21
+      Camera: GoPro Hero 7 Black
+      Operator: Ukrainian Railways (UZ)
+      Depart</p><p><a href='https://www.youtube.com/watch?v=w7eD6iztdPA' target='_blank'>GERMANY'S CONTROVERSIAL INTERCITY TRAIN / DB IC2 TWINDEXX VARIO REVIEW</a><a id='w7eD6iztdPA'>w7eD6iztdPA</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Germany for an Intercity review on the channel!
+      
+      Today we will be seeing if the controversial DB IC2 Twindexx Vario sets are worthy of the Intercity name, or are they just a glorified regional train with carpets... Enjoy the video!
+      
+      Date of Filming: 22/9/21
+      Camera: GoPro Hero 7 Black
+      Operator:  Deutsche Bahn (DB)
+      Departure: Dresden Hbf, Germany
+      Arrival: </p><p><a href='https://www.youtube.com/watch?v=scCMBmyx8UQ' target='_blank'>FAREWELL TO DENMARK'S LAST DIESEL LOCOMOTIVE: DSB 'ME' CLASS REVIEW FROM COPENHAGEN TO ROSKILDE</a><a id='scCMBmyx8UQ'>scCMBmyx8UQ</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Denmark for another video on the channel!
+      
+      Today we'll be riding with the Danish national operator DSB, aboard a service from the capital, Copenhagen to Roskilde. The diesel-electric loco hauling us is one that has now been retired, the mighty 'ME' Class. I thought this video would make a nice farewell to this behemoth loco. Enjoy the ride!
+      
+      **PLEASE NOT</p><p><a href='https://www.youtube.com/watch?v=XZjkaslVSgo' target='_blank'>EUROPE'S BEST DINING CAR? / PKP INTERCITY: KRAKOW TO WROCŁAW REVIEW</a><a id='XZjkaslVSgo'>XZjkaslVSgo</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to Poland for my first trip report from here on the channel!
+      
+      Today we'll be riding with the Polish national operator PKP, aboard one of their Intercity services from Kraków to Wrocław in the south of Poland. This classic European Intercity experience has one of the famed WARS dining cars, probably the best restaurant on rails, which we obviously had to sample..</p><p><a href='https://www.youtube.com/watch?v=jVv0ILyMJD4' target='_blank'>GERMANY'S UPSIDE DOWN RAILWAY / WUPPERTAL SCHWEBEBAHN REVIEW</a><a id='jVv0ILyMJD4'>jVv0ILyMJD4</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to a very unique review on the channel!
+      
+      Today we will be checking out the upsidedown railway in Wuppertal, Germany. This is another trip I have wanted to make for a long time, and to experience this unique system really was a great day out! Enjoy the video!
+      
+      Date of Filming: 24/9/21
+      Camera: GoPro Hero 7 Black
+      Operator:  WSW Wuppertaler Stadtwerke
+      Departure: Obe</p><p><a href='https://www.youtube.com/watch?v=dsx3N7LWnVQ' target='_blank'>WORLD'S MOST SCENIC RAILWAY JOURNEY / PANORAMIC FIRST CLASS ON THE BERNINA EXPRESS IN SWITZERLAND</a><a id='dsx3N7LWnVQ'>dsx3N7LWnVQ</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to the most special video I've ever published!
+      
+      Today we will be fulfilling one of my bucket list trips, and riding First Class on the Bernina Express in one of the special Panoramic Coaches. We will be travelling from Chur, Switzerland to Tirano, Italy on the Unesco World Heritage Railway which includes the stunning Bernina Pass up at 2,328m / 7,638ft, the high</p><p><a href='https://www.youtube.com/watch?v=sBjNdpv7yy4' target='_blank'>STUNNING TRIP from Innsbruck into the Mountains / ÖBB Austrian Regional Train Review</a><a id='sBjNdpv7yy4'>sBjNdpv7yy4</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to back to Austria for another trip report on the channel!
+      
+      Today we'll be riding with the Austrian national operator ÖBB, aboard one of their regional services.  We'll be travelling from Innsbruck Hbf to Seefeld in Tirol, at 4000ft in the Austrian Alps.  This is a breathtakingly scenic ride which I do hope you enjoy!
+      
+      **PLEASE NOTE** At the time of filming all </p><p><a href='https://www.youtube.com/watch?v=wr8hPAYtWag' target='_blank'>SPAIN'S 310KMH FLAGSHIP HIGHSPEED TRAINS / RENFE AVE S103 VELARO REVIEW</a><a id='wr8hPAYtWag'>wr8hPAYtWag</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Spain for my 3rd trip report, from the 3rd different operator on the Barcelona-Madrid highspeed line.
+      
+      Today we will checking out the Spanish national operator's offering, their flagship AVE S103 Siemens Velaro service. This is definitely the most premium service on the route, with 3 different ticket types and a variety of options to select, which includ</p><p><a href='https://www.youtube.com/watch?v=4te3Y48L4Ts' target='_blank'>THE WORLD'S LONGEST TRAMS / RIDING LINE 1 IN BUDAPEST HUNGARY</a><a id='4te3Y48L4Ts'>4te3Y48L4Ts</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to a bit of a different video from Hungary on the channel!
+      
+      Today we are taking a ride along the full route of Budapest Tram Line 1, in the Hungarian capital city.  This line is served by 9-part CAF Urbos 3 trams which are 55.9m (183ft) in length, making them the world's longest trams. They wind their way through the beautiful Budapest and across the River Danub</p><p><a href='https://www.youtube.com/watch?v=uGx0T1I24Sw' target='_blank'>GOTHENBURG TO STOCKHOLM NOW FROM JUST €12.99 / FLIXTRAIN SWEDEN REVIEW / SWEDISH TRAIN TRIP REPORT</a><a id='uGx0T1I24Sw'>uGx0T1I24Sw</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to my another Swedish train trip report!
+      
+      Today we will be taking the a ride with Flixtrain, the low-cost open access operator that is taking Europe by storm. We'll be riding on Sweden's most lucrative route, between the 2 biggest cities, Gothenburg & Stockholm, for the bargain price of just €12.99. I hope you enjoy the video!
+      
+      **PLEASE NOTE** At the time of fil</p><p><a href='https://www.youtube.com/watch?v=ksOw9CLkM7w' target='_blank'>TRENITALIA VIVALTO REGIONALE REVIEW / CIVITAVECCHIA TO ROME / ITALIAN TRAIN TRIP REPORT</a><a id='ksOw9CLkM7w'>ksOw9CLkM7w</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to a regional train review video from Italy.
+      
+      Today we're take a Trenitalia Regionale service from the western Italian city of Civitavecchia and location of the the Rome Cruise Terminal, inland to the capital city, Rome.  These high capacity double decker trains are perfect for the 1h20m trip for which they serve and all for a very affordable price. Enjoy the vi</p><p><a href='https://www.youtube.com/watch?v=i81I5tU_Tq4' target='_blank'>CD RAILJET FIRST CLASS REVIEW: PRAGUE TO VIENNA / CZECH TRAIN TRIP REPORT</a><a id='i81I5tU_Tq4'>i81I5tU_Tq4</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another Czech review on the channel!
+      
+      This week I am collaborating with Dylan's Travel Reports and we are showcasing České Dráhy's premium services. This video is on the Railjet service in First Class from Prague to Vienna, and Dylan's is on the SuperCity Pendolino from Prague to Košice. I hope you like them both, enjoy the ride!
+      
+      **PLEASE NOTE** At the time </p><p><a href='https://www.youtube.com/watch?v=YuP-mj6Otas' target='_blank'>FAST TRAIN ACROSS SLOVAKIA: ZSSK FIRST CLASS FROM KOSICE TO BRATISLAVA</a><a id='YuP-mj6Otas'>YuP-mj6Otas</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to my first Slovakian review on the channel!
+      
+      Today we will be checking out ZSSK, the national operator. We are travelling on one of their  'Rýchlik' or 'fast' trains from Slovakia's 2nd city, Košice to the capital, Bratislava. 'Fast' is very much a relative term, it's their second tier service, 1 down from Intercity. Enjoy the ride!
+      
+      **PLEASE NOTE** At the time</p><p><a href='https://www.youtube.com/watch?v=4jazLm7j0UE' target='_blank'>GERMANY'S ORIGINAL HIGHSPEED TRAIN / BASEL TO BERLIN DB ICE 1 FIRST CLASS REVIEW</a><a id='4jazLm7j0UE'>4jazLm7j0UE</a><br/>Hello and welcome back to Switzerland for another trip report, this time on an International trip up to Germany's capital, Berlin.
+      
+      Today we will be riding in First Class onboard an iconic ICE 1 set, the first German highspeed train. These great trains really became one of the benchmarks for fast and comfortable travel in Europe and are still fantastic to this day. Enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with th</p><p><a href='https://www.youtube.com/watch?v=yPTq4h53PQI' target='_blank'>UKRAINE'S MOST SCENIC RAILWAY JOURNEY: THE CARPATHIAN MOUNTAINS IN A PRIVATE SLEEPER COMPARTMENT</a><a id='yPTq4h53PQI'>yPTq4h53PQI</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another Ukrainian review on the channel!
+      
+      Today we will be checking out Ukrainian Railways or UZ, the national operator. We are travelling on one of their sleeper trains, but as a day service from Mukachevo in the Southwest of Ukraine, up to Lviv, in the Northwest, a trip of 4 hours & 20 mins. We have a a private compartment today, which basically just means </p><p><a href='https://www.youtube.com/watch?v=Nu7Ghbd8NMM' target='_blank'>A VERY SCENIC SWISS INTER-REGIONAL TRAIN / SBB RE460 REVIEW / SWISS TRAIN TRIP REPORT</a><a id='Nu7Ghbd8NMM'>Nu7Ghbd8NMM</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome back to Switzerland for another trip report!
+      
+      Today we will be taking the very scenic trip from Lausanne to Brig aboard an SBB Re460 push-pull set.  This route hugs the shores of Lake Geneva for much of its length before heading towards the mountains of the Swiss Pennine Alps to connect with mountain railways up to the Matterhorn and suchlike. Enjoy the ride!
+      
+      *</p><p><a href='https://www.youtube.com/watch?v=rE9FBv7-pi8' target='_blank'>SWEDEN'S LUXURIOUS ARCTIC SLEEPER TRAIN REVIEW / SJ SWEDISH TRAIN TRIP REPORT</a><a id='rE9FBv7-pi8'>rE9FBv7-pi8</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to my first Swedish train trip report!
+      
+      Today we will be taking the nightly sleeper train from Umeå in Sweden's far North down to Gothenburg / Göteborg on the West Coast.  This 1000km, 12.5 hour trip will be made in a luxurious sleeper compartment. I hope you enjoy the video!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried o</p><p><a href='https://www.youtube.com/watch?v=C4umXSU8at4' target='_blank'>DENMARK'S TROUBLED HIGHSPEED TRAINS / DSB IC4 DMU REVIEW / DANISH TRAIN TRIP REPORT</a><a id='C4umXSU8at4'>C4umXSU8at4</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to my first Danish train trip report!
+      
+      Today we will be travelling with Denmark's national operator, DSB, aboard one of their long-delayed and problematic IC4 DMUs.  It's just an hour long trip from Hvalsø into Copenhagen city centre on this Intercity turned regional set, enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has be</p><p><a href='https://www.youtube.com/watch?v=JpICdt51smM' target='_blank'>A SCENIC COASTAL RIDE FROM ATHENS / TRAINOSE SIEMENS DESIRO REVIEW / GREEK TRAIN TRIP REPORT</a><a id='JpICdt51smM'>JpICdt51smM</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to my first Greek train trip report!
+      
+      Today we will be travelling with the Greece's national operator TrainOSE, who are owned by Trenitalia, the Italian national operator.  We'll be taking a scenic coastal trip from Athens to Kiato aboard a 5-car Siemens Desiro regional EMU. Sit back and enjoy the spectacular ride!
+      
+      **PLEASE NOTE** At the time of filming all tra</p><p><a href='https://www.youtube.com/watch?v=MkDrQb4Tk2M' target='_blank'>PORTUGAL'S OLD SCHOOL INTERCITY / CP INTERCIDADES FIRST CLASS REVIEW / PORTUGUESE TRAIN TRIP REPORT</a><a id='MkDrQb4Tk2M'>MkDrQb4Tk2M</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another Portuguese train review on the channel!
+      
+      So today we will be taking an old school Intercidades / Intercity service in First Class from the major junction station of Entroncamento to Lisbon Santa Apolónia in the city centre of Portugal's capital. I hope you enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been ca</p><p><a href='https://www.youtube.com/watch?v=5lsvBJ-ggM8' target='_blank'>SPAIN'S SUPER GAUGE CHANGING HIGHSPEED TRAIN / RENFE S-130 ALVIA REVIEW / SPANISH TRAIN TRIP REPORT</a><a id='5lsvBJ-ggM8'>5lsvBJ-ggM8</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another Spanish train trip report!
+      
+      Today we will be travelling with Spanish national operator Renfe aboard one of their Serie 130 dual-voltage gauge-changing Alvia trainsets.  We'll be riding from Madrid's 2nd station, Chamartín, up to Santander on the North Coast. We end up with a serious delay on the service, but never mind, as that ends up making the trip</p><p><a href='https://www.youtube.com/watch?v=G5WORSI4TMs' target='_blank'>INTERNATIONAL ÖBB RAILJET REVIEW / VIENNA TO MUNICH / AUSTRIAN TRAIN TRIP REPORT</a><a id='G5WORSI4TMs'>G5WORSI4TMs</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another international trip report on the channel!
+      
+      Today we'll be riding with the Austrian national operator ÖBB, aboard one of their flagship Railjet services.  We'll be travelling from Vienna, Austria to Munich, Germany in Economy Class.  These are one of the most thought out trainsets out there, being both fast, comfortable and reliable. Enjoy the ride!
+      
+      *</p><p><a href='https://www.youtube.com/watch?v=vwLCrp-AjkM' target='_blank'>HUNGARY'S NEWEST TRAIN / MAV-START STADLER KISS REVIEW / HUNGARIAN TRAIN TRIP REPORT</a><a id='vwLCrp-AjkM'>vwLCrp-AjkM</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another trip report from Hungary on the channel!
+      
+      Today we are checking out the newest train in the country and honestly one of the best I've tried for a while! It's a new Stadler KISS double decker EMU which is running on the Budapest suburban network. We travel to Szob on the Slovakian border today aboard this fantastically spacious, comfortable and accessi</p><p><a href='https://www.youtube.com/watch?v=HGXdkeSHBbw' target='_blank'>LOCO HAULED TRAIN FROM MARSEILLE TO NICE / SNCF LOCO HAULED TER REVIEW / FRENCH TRAIN TRIP REPORT</a><a id='HGXdkeSHBbw'>HGXdkeSHBbw</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another French trip report on the channel!
+      
+      Today we'll be loco hauled TER (express regional) service along the French Riviera from Marseille to Nice.  This is a very relaxing and scenic route along the Côte d'Azur with endless views of the Mediterranean Sea.  These services are few and far between, so get one before they are gone for good. Enjoy the ride!
+      
+      *</p><p><a href='https://www.youtube.com/watch?v=9MQHOihHUJI' target='_blank'>THE INSANE TRAM LINE 28 / RIDING LISBON'S 90 YEAR OLD ICONIC YELLOW TRAMS</a><a id='9MQHOihHUJI'>9MQHOihHUJI</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to special trip report on the channel!
+      
+      Today we'll be taking a ride on one of Lisbon's iconic 90 year old yellow 'Remodelado' trams on the most famous route - Line 28! This journey is full of narrow streets and steep gradiants as we wind our way 7km through Portugal's capital city. Enjoy the video!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitte</p><p><a href='https://www.youtube.com/watch?v=BTsSXlpGRiU' target='_blank'>SPAIN'S EXCELLENT REGIONAL TRAINS / RENFE S-599 MEDIA DISTANCIA REVIEW / SPANISH TRAIN TRIP REPORT</a><a id='BTsSXlpGRiU'>BTsSXlpGRiU</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another Spanish train trip report!
+      
+      Today we will be travelling with Spanish national operator Renfe aboard one of their Serie 599 Media Distancia DMUs. Our route will be from Valencia to Alicante along Spain's east coast. In my opinion these are the best regional trains in Spain, offering great comfort and amenities to the traveller along with reasonable val</p><p><a href='https://www.youtube.com/watch?v=CUVtKYiyoac' target='_blank'>FIRST CLASS INTERCITY REVIEW IN KYIV UKRAINE / UKRAINIAN TRAIN TRIP REPORT</a><a id='CUVtKYiyoac'>CUVtKYiyoac</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to my first Ukrainian review on the channel!
+      
+      Today we will be checking out Ukrainian Railways or UZ, the national operator. We are travelling on one of their three types of Intercity service, this one being loco hauled with a fixed set of 5 coaches. Spoiler Alert: It's actually much better than I'd imagined! Enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filmi</p><p><a href='https://www.youtube.com/watch?v=YMln6aPMPr0' target='_blank'>EUROPE'S LAST BOEING 717 / VOLOTEA REVIEW FROM BILBAO TO VALENCIA / SPANISH PLANE TRIP REPORT</a><a id='YMln6aPMPr0'>YMln6aPMPr0</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to the another of my infrequent plane trip reports on the channel!
+      
+      So today we will be making the short hop from Bilbao to Valencia, a route which doesn't have a viable railway alternative.  We'll also be flying with Volotea, a new airline for me and taking Europe's last remaining Boeing 717, which have sadly now all been retired since filming. Enjoy the trip!
+      </p><p><a href='https://www.youtube.com/watch?v=vlaoEqT_7s8' target='_blank'>ITALY'S SLEEPER TRAIN FERRY TO SICILY / MILAN TO PALERMO / ITALIAN TRAIN TRIP REPORT</a><a id='vlaoEqT_7s8'>vlaoEqT_7s8</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to the longest and most expensive trip report on the channel... so far!
+      
+      Tonight we're going on a special trip... A 21 hour sleeper train journey from Milan in Northern Italy to Palermo, on the island of Sicily in the South.  This Intercity Notte service also uses the last remaining train-ferry in Europe to cross the Strait of Messina. Yes, the train actually bo</p><p><a href='https://www.youtube.com/watch?v=DuTwfkJfqWU' target='_blank'>PORTUGAL'S MOST SCENIC RAILWAY JOURNEY / DOURO VALLEY CP1400 REVIEW / PORTUGUESE TRAIN TRIP REPORT</a><a id='DuTwfkJfqWU'>DuTwfkJfqWU</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another Portuguese train review on the channel!
+      
+      So today we will be taking a very special trip along Portugal's Most Scenic Railway Line from Porto to Pocinho.  Our train is a very special one; a 60 year-old UK built Série 1400 diesel locomotive, which is modelled on the British Class 20.  We'll be travelling in a 70-year old Swiss Schindler coach, that's no</p><p><a href='https://www.youtube.com/watch?v=aX9K71jF1TI' target='_blank'>EUROPE'S BEST VALUE FIRST CLASS / REGIOJET RELAX CLASS REVIEW / INTERNATIONAL TRAIN TRIP REPORT</a><a id='aX9K71jF1TI'>aX9K71jF1TI</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another intertnational trip report on the channel!
+      
+      Today we'll be reviewing open-access operator RegioJet on their Prage-Budapest route hauled by a Siemens Vectron electric loco. We'll be travelling between Vienna Hbf and Budapest Déli on a service which is running around 1 hour late. Enjoy the video!
+      
+      **PLEASE NOTE** At the time of filming all travel was pe</p><p><a href='https://www.youtube.com/watch?v=dEST3jRe4e0' target='_blank'>RENFE AVLO REVIEW: BARCELONA TO MADRID AT 300KMH FROM JUST €7 / SPANISH TRAIN TRIP REPORT</a><a id='dEST3jRe4e0'>dEST3jRe4e0</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to a special highspeed train trip report on the channel!
+      
+      Today we'll be reviewing the new low cost service between Barcelona and Madrid, operated by Avlo, low-cost subsidiary of the Spanish national operator Renfe. This service joins Ouigo España in bringing much needed competition to this overpriced Spanish highspeed line and now tickets start at just €7, wher</p><p><a href='https://www.youtube.com/watch?v=d8tVFOV7qPM' target='_blank'>15,000 SUBSCRIBER AND 2 MILLION VIEWS Q&A SPECIAL</a><a id='d8tVFOV7qPM'>d8tVFOV7qPM</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to my first ever Q&A video on the channel!
+      
+      Thank you for everyone's ongoing support with the channel; views, likes & subscriptions! I genuinely couldn't keep travelling and making this videos without your support, so thanks form the bottom of my heart!  There's lots more exicting videos to come on the channel this year which I hope will only become bigger and b</p><p><a href='https://www.youtube.com/watch?v=dsnxs1KIFYg' target='_blank'>NS VIRM INTERCITY DOUBLE DECKER REVIEW / AMSTERDAM TO UTRECHT / DUTCH TRAIN TRIP REPORT</a><a id='dsnxs1KIFYg'>dsnxs1KIFYg</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another video from The Netherlands!
+      
+      Today we'll be taking a domestic intercity service from the capital Amsterdam to Utrecht, the 4th largest city.  We'll be riding aboard a double decker VIRM EMU, the mainstay of the Dutch IC network. Enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance</p><p><a href='https://www.youtube.com/watch?v=D_l5bWKvdeo' target='_blank'>PORTUGAL'S PERFECT PENDOLINOS / ALFA PENDULAR HIGHSPEED REVIEW / PORTUGUESE TRAIN TRIP REPORT</a><a id='D_l5bWKvdeo'>D_l5bWKvdeo</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to the first Portuguese train review on the channel!
+      
+      So today we will be taking a highspeed trip from Portugal's capital city, Lisbon, to its second largest city, Porto.  The train we are taking is the Comboios de Portugal (Portuguese Railways) flagship service, the Alfa Pendular tilting train. I hope you enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming </p><p><a href='https://www.youtube.com/watch?v=E3ow6fa0Fq8' target='_blank'>MALLORCA TO VALENCIA BY FERRY REVIEW / BALEARIA MEDITERRANEAN TRIP REPORT</a><a id='E3ow6fa0Fq8'>E3ow6fa0Fq8</a><br/>Hello and welcome to the FIRST boat/ferry/ship trip report on the channel!
+      
+      So today we will be taking a ferry from Palma, the capital of the Balearic island of Mallorca/ Majorca, across the Mediterranean to the Eastern Spanish mainland city of Valencia, via Ibiza. We will be travelling with Baleària, aboard their 2 year old ferry, Hypatia de Alejandria. Enjoy the trip!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local res</p><p><a href='https://www.youtube.com/watch?v=T3Wku3p0SWc' target='_blank'>METROPOLITAN: BUDAPEST TO BRATISLAVA / ČESKÉ DRÁHY EUROCITY REVIEW / INTERNATIONAL TRAIN TRIP REPORT</a><a id='T3Wku3p0SWc'>T3Wku3p0SWc</a><br/>Hello and welcome to another international train trip report on the channel!
+      
+      So today we will be taking a loco hauled Eurocity service between 2 capital cities, Budapest & Bratislava.  These really are the best ways to get between so many of Europe's great cities and this train in fact runs all the way from Hungary to Prague in the Czech Republic.
+      
+      České dráhy have really thought of everything when it comes to passenger convenience and comfort on these trains. From a full sit-down restaurant co</p><p><a href='https://www.youtube.com/watch?v=gaDr_GEt5hc' target='_blank'>300KMH MADRID TO BARCELONA FROM JUST €9: OUIGO ESPAÑA PLUS REVIEW / SPANISH TRAIN TRIP REPORT</a><a id='gaDr_GEt5hc'>gaDr_GEt5hc</a><br/>Hello and welcome to a special highspeed train trip report on the channel!
+      
+      Today we'll be reviewing the new low cost service from Madrid to Barcelona, operated by Ouigo, who are owned by French national operator, SNCF. This brings much needed competition to this overpriced Spanish highspeed line and now tickets start at just €9, where they used to be €60+. I hope you like this early look at the new service between Spain's 2 biggest cities. Enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming</p><p><a href='https://www.youtube.com/watch?v=6V7P_QrNRag' target='_blank'>HOW TO GET FROM MILANO CENTRALE STATION TO MILAN MALPENSA AIRPORT / ITALIAN TRAIN TRIP REPORT</a><a id='6V7P_QrNRag'>6V7P_QrNRag</a><br/>Hello and welcome to another in my 'How to...' series of videos.
+      
+      This video will show you the easiest way to travel from the majestic Milano Centrale Station to Milano Malpensa Airport.  Using the Malpensa Express fast train link you can travel between the two in great comfort in around 50 minutes.
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local restrictions.
+      
+      Date of Filming - 28/8/20
+      Camera - GoPro Hero 7 Black
+      Opeart</p><p><a href='https://www.youtube.com/watch?v=eewmS9MSS3s' target='_blank'>FIRST CLASS AT 300KMH FROM LILLE TO PARIS / TGV DUPLEX REVIEW / FRENCH TRAIN TRIP REPORT</a><a id='eewmS9MSS3s'>eewmS9MSS3s</a><br/>Hello and welcome to another highspeed trip report on the channel!
+      
+      Today we'll be taking a 300kmh blast across Northern France, from Lille to Paris in First Class onboard a double TGV Duplex set.  This is a direct run to the capital, with no intermediate stops and we cover the 210km route in juts 1 hours & 2 minutes. Enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local restrictions.
+      
+      Date of Filming: 13/7/20
+      </p><p><a href='https://www.youtube.com/watch?v=nFiWA0q4Hlc' target='_blank'>SPAIN'S NARROW GAUGE NORTH / RENFE FEVE SANTANDER TO BILBAO REVIEW / SPANISH TRAIN TRIP REPORT</a><a id='nFiWA0q4Hlc'>nFiWA0q4Hlc</a><br/>Hello and welcome to one another train trip report on the channel!
+      
+      So today we will be riding one of the narrow gauge lines which sprawl across Northern Spain.  The network is run by Renfe under their 'Feve' branding and covers over 1000km (620 miles).
+      
+      We will be taking the first of the 4 daily departures from Santander to Bilbao, a journey of just under 3 hours aboard a 2-car Feve DMU.
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance</p><p><a href='https://www.youtube.com/watch?v=BoJq2PzW8Zw' target='_blank'>HOW TO GET FROM LJUBLJANA TO LAKE BLED / SLOVENIAN TRAIN TRIP REPORT</a><a id='BoJq2PzW8Zw'>BoJq2PzW8Zw</a><br/>Hello and welcome to another in my 'How to...' series of videos.
+      
+      This video will show you how to travel by train from Ljubljana main station to Lesce-Bled on the East shore of the fantastic Lake Bled.  There is at least an hourly service using Slovenske železnice's local service with their Class 312 Siemens Desiro EMU's and a shuttle bus from the station. Enjoy this video which takes you to this magical lake!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried </p><p><a href='https://www.youtube.com/watch?v=WbRxRJfrJSw' target='_blank'>LE PETIT TRAIN JAUNE / BREATHTAKING PYRENEES MOUNTAIN TRAIN / FRENCH TRAIN TRIP REPORT</a><a id='WbRxRJfrJSw'>WbRxRJfrJSw</a><br/>Hello and welcome to one of the most special videos I've made to date!
+      
+      So today we will be riding taking 'Le Petit Train Jaune' or 'The Little Yellow Train' through the Pyrenees Mountains. This is a very popular tourist attraction on the France-Spain border and sees many thousands of tourists come to ride this spectacular journey every week. So sit back and enjoy what is possibly my most memorable, scenic and exicitng train trip I've ever been on!
+      
+      **PLEASE NOTE** At the time of filming all tra</p><p><a href='https://www.youtube.com/watch?v=ovQp3RkB4xc' target='_blank'>FROM PERPIGNAN TO THE PYRENEES FOR €1 / SNCF Z2 TER REVIEW / FRENCH TRAIN TRIP REPORT</a><a id='ovQp3RkB4xc'>ovQp3RkB4xc</a><br/>Hello and welcome to one another train trip report on the channel!
+      
+      So today we will be riding taking a local TER service from Perpignan into the Pyrenees mountains.  This is another trip booked through SNCF's Summer 2020 promotion for the bargain price of just €1.  Unfortutanely there was some engineering work on the line, so half of the trip is by bus, but the scenery is no less spectacular! I am taking this train en route to a very special tourist attraction, check out the video to see where!</p><p><a href='https://www.youtube.com/watch?v=TbFRWBZYcSA' target='_blank'>ITALY'S PRIVATE HIGHSPEED TRAINS / ITALO EVO FIRST CLASS REVIEW</a><a id='TbFRWBZYcSA'>TbFRWBZYcSA</a><br/>Hello and welcome to another highspeed review on the channel!
+      
+      Today we will be riding with Europe's only private highspeed operator, NTV Italo. They run the main routes in Italy in direct competition with state owned Trenitalia and their Frecciarossa/Frecciargento brand trains. Today we will be travelling from Naples/Napoli upto the capital Rome/Roma onboard one of their new EVO trainsets. I hope you enjoy the ride!
+      
+      Date of Filming - 1/8/20
+      Camera: GoPro Hero 7 Black
+      Operator: NTV Italo
+      Depart</p><p><a href='https://www.youtube.com/watch?v=CFKvjdk9Lvw' target='_blank'>EUROPE'S 300KMH HIGHSPEED TRAINS COMPARED! ICE 3 v TGV DUPLEX v AVE S-112 v FRECCIAROSSA 1000</a><a id='CFKvjdk9Lvw'>CFKvjdk9Lvw</a><br/>Hello and welcome to my 10,000 subscriber special video!
+      
+      Let me just start by thanking everyone who's watched and liked my videos as well as all of you who are subscribed to the channel. I couldn't have imagined in less than 2 years I'd have over 10k subs and over 1.2m views!
+      
+      This video is one I've been thinking about doing for a while and this eemed like the perfect opportunity as a one-off special!  We'll be comparing 4 of the great European 300kmh+ / 186mph+ trains! And they are the Italian</p><p><a href='https://www.youtube.com/watch?v=RsKMmWH4q2I' target='_blank'>KISSING IN VIENNA / WESTBAHN STADLER KISS REVIEW / AUSTRIAN TRAIN TRIP REPORT</a><a id='RsKMmWH4q2I'>RsKMmWH4q2I</a><br/>Hello and welcome to another video on the channel!
+      
+      Today we will be riding with Westbahn, aboard one of the Stadler KISS doiuble decker EMUs from Vienna Westbahnhof to St. Pölten in Austria.  They are a private operator who provide a great value service on the busy Vienna-Linz-Salzburg corridor in Austria. I hope you enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local restrictions.
+      
+      Date of Filming - 22/8/20</p><p><a href='https://www.youtube.com/watch?v=81ckhWx9d6Q' target='_blank'>HOW TO GET FROM WIEN HAUPTBAHNHOF TO WESTBAHNHOF / CROSSING VIENNA BY TRAM</a><a id='81ckhWx9d6Q'>81ckhWx9d6Q</a><br/>Hello and welcome to another in my 'How to...' series of videos.
+      
+      This video is a quick & easy guide of how to transfer from Vienna / Wien Hauptbahnhof (main station) to Vienna / Wien Westbahnhof (west station) using Tram Line 18 in just 15 minutes. I hope you find it useful!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local restrictions.
+      
+      Date of Filming: 22/8/20
+      Camera: GoPro Hero 7 Black
+      Departure: Wien Hauptbahnhof, Vi</p><p><a href='https://www.youtube.com/watch?v=HH0TXI52NBU' target='_blank'>SCENIC SICILY & MT. ETNA BY TRAIN / TRENITALIA REGIONALE REVIEW / ITALIAN TRAIN TRIP REPORT</a><a id='HH0TXI52NBU'>HH0TXI52NBU</a><br/>Hello and welcome to another video!
+      
+      Today we will be taking a Trenitalia Regionale Veloce service across the stunning island of Sicily. We'll be travelling East from the capital, Palermo, past Europe's most active volcano, Mount Etna, to Catania on the Eastern coast. Sit back and enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local restrictions.
+      
+      Date of Filming - 28/7/20
+      Camera: GoPro Hero 7 Black
+      Operator: </p><p><a href='https://www.youtube.com/watch?v=eQuCkv9_8V4' target='_blank'>HUNGARY'S SOVIET TRAIN / MAV-START REVIEW / HUNGARIAN TRAIN TRIP REPORT</a><a id='eQuCkv9_8V4'>eQuCkv9_8V4</a><br/>Hello and welcome to another trip report!
+      
+      Today we will be travelling again with the Hungarian state railway operator MÁV-START. Our route is from the central Hungarian town of Lajosmizse to the capital, Budapest aboard a retro liveried loco hauled train. Enjoy the review!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local restrictions.
+      
+      Date of Filming: 13/8/20
+      Camera: GoPro Hero 7 Black
+      Operator: MÁV-START
+      Departure: Laj</p><p><a href='https://www.youtube.com/watch?v=9znAJThBU2o' target='_blank'>4 HOUR €1 INTERNATIONAL TRAIN TRIP / SNCF TER REVIEW / FRENCH TRAIN TRIP REPORT</a><a id='9znAJThBU2o'>9znAJThBU2o</a><br/>Hello and welcome to another international trip report!
+      
+      So today we will be riding from Avignon, France to Portbou, Spain with SNCF TER. This was another one of my bargain €1 Summer 2020 trips booked with SNCF's promotion ot get people back on the rails! It's a very scenic 4 hour trip which inlcudes amazing mountain and stunning coastal views on thie French express regional train. Enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full c</p><p><a href='https://www.youtube.com/watch?v=aahUYku-vgQ' target='_blank'>ALL THE STATIONS IN MALLORCA / NARROW GAUGE TRAIN REVIEW / SPANISH TRAIN TRIP REPORT</a><a id='aahUYku-vgQ'>aahUYku-vgQ</a><br/>Hello and welcome to a unique video on the channel!
+      
+      Today we're going to riding all the narrow gauge lines on the Spanish Balearic island of Mallorca. This would have included the famours 'Tren de Sollér' tourist train, but unfortunately it was suspended due to a broken rail on the line.
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local restrictions.
+      
+      Date of Filming - 23/9/20
+      Camera: GoPro Hero 7 Black
+      Operator: Serveis </p><p><a href='https://www.youtube.com/watch?v=Y1gkuJF9nFY' target='_blank'>THE CLOSEST THING TO A PRIVATE JET / IBERIA CRJ200 REVIEW  / SPANISH PLANE TRIP REPORT</a><a id='Y1gkuJF9nFY'>Y1gkuJF9nFY</a><br/>Hello and welcome to one of my infrequent plane trip reports!
+      
+      Today we're travelling from Valencia Airport (VLC) on Spain's Eastern Mediterranean coast to Palma Airport (PMI) on the Balearic island of Mallorca.  Next week, an exiciting video will follow, where we ride the Mallorca's narrow gauge train network, subscribe so you don't miss it! I hope you enjoy the flight!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local re</p><p><a href='https://www.youtube.com/watch?v=UBW8G4z6b3w' target='_blank'>STUNNING TRAIN TRIP ON THE FRENCH RIVIERA / NICE TO MILAN THELLO REVIEW / INTERNATIONAL TRIP REPORT</a><a id='UBW8G4z6b3w'>UBW8G4z6b3w</a><br/>Hello and welcome to another international train trip report!
+      
+      Today we're travelling with open-access operator Thello on their Nice to Milan route.  This stupidly scenic ride takes in the French Riviera, Monaco, the Mediterranean & Ligurian Seas before arriving in Europe's fashion capital, Milan! Enjoy the ride!
+      
+      Many thanks to Superalbs for suppying the Thello Sleeper train photo which was included in this video. For his review of that, check out the link below:
+      https://www.youtube.com/watch?v</p><p><a href='https://www.youtube.com/watch?v=1pyM4Co5qWM' target='_blank'>RIDING THE LJUBLJANA CASTLE FUNICULAR RAILWAY IN SLOVENIA'S CAPITAL CITY</a><a id='1pyM4Co5qWM'>1pyM4Co5qWM</a><br/>Hello and welcome to a Sunday bonus video on the channel!
+      
+      Today we'll be taking a ride on the funicular railway up to Ljubljana Castle which overlooks Slovenia's Capital City Enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local restrictions.
+      
+      Date of Filming: 25/8/20
+      Camera: GoPro Hero 7 Black
+      Departure: Krek Square, Ljubljana
+      Arrival: Ljubljana Castle, Ljubljana
+      Cost: €2.20 single / €4.00 Return
+      
+      For my Euro</p><p><a href='https://www.youtube.com/watch?v=TD_02nS_UtM' target='_blank'>EUROCITY TRAIN FROM AUSTRIA TO SLOVENIA / EC213 REVIEW / INTERNATIONAL TRAIN TRIP REPORT</a><a id='TD_02nS_UtM'>TD_02nS_UtM</a><br/>Hello and welcome to another internation train trip report!
+      
+      Today we'll be taking the Eurocity EC213 from Villach in Southern Austria to Ljubljana, capital of Slovenia.  It's a loco hauled train consisting of Croatian, Slovenian & Austrian coaches. These services are very important in connecting Europe and offer great value & comfortable trips. I hope you enjoy the ride!
+      
+      **PLEASE NOTE** At the time of filming all travel was permitted and has been carried out in full compliance with the local r</p><p><a href='https://www.youtube.com/watch?v=xHT5agu3fwk' target='_blank'>THE MOST FUN FLIRTING? / LEO EXPRESS BUSINESS CLASS REVIEW / CZECH TRAIN TRIP REPORT</a><a id='xHT5agu3fwk'>xHT5agu3fwk</a><br/>Hello and welcome to another train trip report!
+      
+      Today we're heading taking a short ride from Pardubice to Prague in Czechia to check out open-access operator Leo Express' Business Class offering aboard their 4-class long distance Stadler FLIRT trainsets. Enjoy the ride!
+      
+      The LeoExpress on-board menu and complimentary offers can be found here: https://www.leoexpress.com/en/services/refreshment
+      
+      Many thanks to Pete Brandy for suppying the Premium Class photos which were included in this video. Fo</p><p><a href='https://www.youtube.com/watch?v=53pfZWM8hzs' target='_blank'>SPANISH TGV IN FIRST CLASS AT 300KMH / RENFE AVE S-100 REVIEW / SPANISH TRAIN TRIP REPORT</a><a id='53pfZWM8hzs'>53pfZWM8hzs</a><br/>Hello and welcome to another Highspeed trip report!
+      
+      Today we will be travelling with Spanish national operator Renfe aboard one of the Highspeed AVE services from Alacante on the Costa Blanca coast to Spain's Capital, Madrid.  We will be riding First Class on an AVE S-100, the original Spanish highspeed train. I hope you enjoy the video!
+      
+      Date of Filming: 19/9/20
+      Camera: GoPro Hero 7 Black
+      Operator: Renfe
+      Departure: Alicant Terminal, Alicante, Spain
+      Arrival: Madrid Puerta de Atocha, Spain
+      Cost:</p><p><a href='https://www.youtube.com/watch?v=gJwFwPPJveM' target='_blank'>ITALY'S REGIONAL HIGHSPEED TRAIN / FRECCIABIANCA ETR460 REVIEW / ITALIAN TRAIN TRIP REPORT</a><a id='gJwFwPPJveM'>gJwFwPPJveM</a><br/>Hello and welcome to another Highspeed train review!
+      
+      Today we will be riding aboard a Frecciabianca ETR460 trainset from Italy's capital city, Rome, to Civitavecchia, a port city 70km away.  These regional 'White Arrow' highspeed services keep the smaller Italian towns and cities connected which dont have the highspeed lines served by Frecciarossa & Frecciargento services.  Sit back and enjoy the ride!
+      
+      Date of Filming: 3/8/20
+      Camera: GoPro Hero 7 Black
+      Operator: Trenitalia
+      Departure: Rome/ Rom</p><p><a href='https://www.youtube.com/watch?v=7nUfqlA9yaE' target='_blank'>DB ICE 4 Highspeed Train / Munich to Berlin German Train Review</a><a id='7nUfqlA9yaE'>7nUfqlA9yaE</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another high-speed train trip report!
+      
+      Today we're heading from Munich, the capital of the South German state of Bavaria upto Germany's capital city, Berlin.  We'll be riding aboard the latest ICE 4 (Intercity Express) trainset which has a top speed of 250km/h or 155mph.  Not the fastest, but certainly no slouch either... Enjoy the ride!
+      
+      Date of Filming: 6/8</p><p><a href='https://www.youtube.com/watch?v=VofmBQKP2wk' target='_blank'>AMSTERDAM TO BRUSSELS NS INTERNATIONAL INTERCITY DIRECT / DUTCH TRAIN TRIP REPORT</a><a id='VofmBQKP2wk'>VofmBQKP2wk</a><br/>Hello and welcome to my first trip report of 2021. Happy new year to everyone and hopefully it'll be a much better year all round!
+      
+      Today we're back in The Netherlands to review the International Intercity service from Amsterdam Centraal to Brussels-Midi/Zuid in Belgium.  It's a loco hauled service which is a great alternative between the cities, along the same corridor that Thalys & Eurostar services use. Enjoy the ride!
+      
+      Date of Filming: 13/7/20
+      Camera: GoPro Hero 7 Black
+      Operator: NS (Nederla</p><p><a href='https://www.youtube.com/watch?v=c4B2f0VC9Os' target='_blank'>HOW TO GET FROM AVIGNON TGV TO AVIGNON CENTRE STATIONS IN THE SOUTH OF FRANCE / SNCF TER REVIEW</a><a id='c4B2f0VC9Os'>c4B2f0VC9Os</a><br/>Hello and welcome to another in my 'How to...' series of videos.
+      
+      This video is a quick & easy guide of how to transfer from Avignon TGV to Avignon Centre stations in the South of France.  I'll show you how to buy tickets and give you the information on how to make the connection. I hope you find this video useful!
+      
+      Date of Filming - 14/7/20
+      Camera - GoPro Hero 7 Black
+      Departure: Avignon TGV, France
+      Arrival: Avignon Centre, France
+      Cost: €1.60 (Second Class)
+      
+      My TGV Réseau review between Brussels</p><p><a href='https://www.youtube.com/watch?v=x4rADgCzr3M' target='_blank'>OUIGO TGV DUPLEX REVIEW / 580KM ACROSS FRANCE FOR JUST €19! / FRENCH TRAIN TRIP REPORT</a><a id='x4rADgCzr3M'>x4rADgCzr3M</a><br/>Hello and welcome to another high-speed trip report!
+      
+      Today we will be riding across France with SNCF's low-cost carrier Ouigo!  Our journey is from Paris Gare de Lyon to Avignon TGV in the South of France.  A total distance of 580km which we cover in just 2 hours & 40 minutes, impressive!
+      
+      This may not be an experience that everyone would enjoy, but it's great that high-speed train travel can be brought to the masses at an affordable price. Enjoy the ride!
+      
+      Date of Filming: 14/7/20
+      Camera: GoPr</p><p><a href='https://www.youtube.com/watch?v=_OFuE2o8znU' target='_blank'>HOW TO GET TO POMPEII / CIRCUMVESUVIANA NAPOLI / ITALIAN TRAIN TRIP REPORT</a><a id='_OFuE2o8znU'>_OFuE2o8znU</a><br/>Hello and welcome to another video in my 'How to...' series, a special one today!
+      
+      We will be making the trip to the ancient city of Pompeii aboard with the Circumvesuviana narrow gauge railway.  These 6 commuter/ local lines serve the communities to the East of Naples/ Napoli around the Mount Vesuvius area, as the name suggests.
+      
+      Now this may not be a very well looked after network, with heavily graffiti'd trains, but it's cheap and it gets you there. Enjoy the trip; we'll be having a quick loo</p><p><a href='https://www.youtube.com/watch?v=o8k0AQPKsOQ' target='_blank'>SICILY TO NAPLES USING THE TRAIN-FERRY / TRENITALIA INTERCITY / ITALIAN TRAIN TRIP REPORT</a><a id='o8k0AQPKsOQ'>o8k0AQPKsOQ</a><br/>Hello and welcome to very special train review!
+      
+      Today we will be riding on one of the last remaining train-ferry services between Sicily & mainland Italy with Trenitalia Intercity.  We depart Siracusa and travel up the East coast of the island, catch the ferry from Messina, across to San Giovani and continue up Italy's West coast to Naples/ Napoli.
+      
+      Sit back and enjoy the ride on the most unique train service I've experienced to date! The trip also takes us past Mount Etna & Mount Vesuvius whic</p><p><a href='https://www.youtube.com/watch?v=q0Cli6plfp8' target='_blank'>FLIRTING AT LAKE BALATON, HUNGARY / MAV-START STADLER FLIRT REVIEW / HUNGARIAN TRAIN TRIP REPORT</a><a id='q0Cli6plfp8'>q0Cli6plfp8</a><br/>Hello and welcome to another trip report!
+      
+      Today we will be travelling again with the Hungarian state railway operator MÁV-START. Our route is from Siófok on the Southern shore of Lake Balaton, the largest freshwater lake in Europe, into the Hungarian capital, Budapest.
+      
+      Our ride consists of 2x 4-car 11 year old Stadler Flirt 2's from MÁV's stock of 123 of them, making them the largest operator of the type.
+      
+      Date of Filming: 15/8/20
+      Camera: GoPro Hero 7 Black
+      Operator: MÁV-START
+      Departure: Siófo</p><p><a href='https://www.youtube.com/watch?v=A3JASgkQylg' target='_blank'>THE LONGEST TRAIN JOURNEY IN SPAIN / TORRE DEL ORO / RENFE ALVIA S-130 / SPANISH TRAIN TRIP REPORT</a><a id='A3JASgkQylg'>A3JASgkQylg</a><br/>Hello and welcome to a special trip report!
+      
+      Today we will be travelling with Spanish national operator Renfe aboard one of the Alvia S-130 dual voltage, dual gauge trainsets.  Powered by 2x Bombardier electric power cars & featuring 11x Talgo Serie VII coaches these are the fastest sets capable of running on Iberian gauge lines.
+      
+      We won't be making the full 10+ hour trip from Barcelona to Sevilla today, instead just taking the 6+ hour hop between Valencia and Córdoba; I hope you enjoy the ride!</p><p><a href='https://www.youtube.com/watch?v=27tHKiBFyz0' target='_blank'>MY FAVOURITE EUROPEAN REGIONAL TRAIN / ÖBB CITYJET REVIEW / AUSTRIAN TRAIN TRIP REPORT</a><a id='27tHKiBFyz0'>27tHKiBFyz0</a><br/>Hello and welcome to another video on the channel!
+      
+      Today we will be riding my favourite European regional train, the super cute ÖBB Cityjet between St. Pölten & Vienna in Austria.  This Siemens Desiro is brilliant; from its stunning orange livery to its functional & stylish interior; I hope you enjoy the ride!
+      
+      Date of Filming: 22/8/20
+      Camera: GoPro Hero 7 Black
+      Operator: ÖBB
+      Departure: St. Pölten Hbf, Austria
+      Arrival: Vienna Westbahnhof, Austria
+      Cost: €14.20 (Standard Fare, One Class)
+      
+      Check o</p><p><a href='https://www.youtube.com/watch?v=EOGuV166pnU' target='_blank'>FRANCE'S MOST SCENIC RAILWAY FOR JUST €1 / LA LIGNE DES CÉVENNES / FRENCH TRAIN TRIP REPORT</a><a id='EOGuV166pnU'>EOGuV166pnU</a><br/>Hello and welcome to a very special trip report!
+      
+      So today we will be riding the full length of 'The Most Scenic Railway in France' - La Ligne des Cévennes between Nîmes and Clermont Ferrand.  You will be stunned when you see the scenery on this route which takes 5 hours from end to end, yet only covers 300km.  It might not be fast, but it certainly is stunning! Enjoy!
+      
+      Date of Filming: 16/7/20
+      Camera: GoPro Hero 7 Black
+      Operator: SNCF
+      Departure: Nîmes, France
+      Arrival: Clermont Ferrand, France
+      C</p><p><a href='https://www.youtube.com/watch?v=geItkm1E84k' target='_blank'>THE BERLINER: BERLIN TO PRAGUE / ČESKÉ DRÁHY EUROCITY REVIEW / CZECH TRAIN TRIP REPORT</a><a id='geItkm1E84k'>geItkm1E84k</a><br/>Hello and welcome to another international train trip report!
+      
+      Today we will be travelling wiht the Czech national operator České dráhy aboard their 'Berliner' international EuroCity EC175 service from Berlin Hbf in the German capital to Praha hl.n in the Czech capital.  This is a proper loco hauled train with compartment seating & a full blown restaurant service, which obviously we will be trying.  The trip doesn't go without a hitch but it's still a very enjoyable trip!
+      
+      Date of Filming: 8/8/2</p><p><a href='https://www.youtube.com/watch?v=rslLB91iSho' target='_blank'>Italy's FLAGSHIP Highspeed Train / Venice to Milan on the Frecciarossa 1000</a><a id='rslLB91iSho'>rslLB91iSho</a><br/>Book Great Deals on Train, Plane, Bus & Ferry Travel through my Omio Affiliate Link here:
+      
+      
+      Hello and welcome to another Highspeed train review!
+      
+      Today we will be riding aboard a fantastic Frecciarossa 1000 trainset right across the top of Italy.  Our journey is from Venice / Venezia Santa Lucia to Milan / Milano Centrale and we will reach speeds of 300km/h (186mph) on this train that is capable of 400km/h (248mph).
+      
+      Sit back and enjoy the ride on what is possibly the b</p><p><a href='https://www.youtube.com/watch?v=q6hPoe4Jjik' target='_blank'>CRAZIEST TRAIN IN HUNGARY / MAV BZMOT REVIEW / HUNGARIAN TRAIN TRIP REPORT</a><a id='q6hPoe4Jjik'>q6hPoe4Jjik</a><br/>Hello and welcome to another trip report!
+      
+      Today we will be travelling with the Hungarian state railway operator MÁV-START. We are taking a single coach Class 117 Bzmot diesel railbus service between the central cities of Kecskemét and Lajosmizse.  This is certainly one of the quirkiest and cheapest trains I have ever riden on and one I won't forget in a hurry... either the sights or the smells! Enjoy!
+      
+      Date of Filming: 13/8/20
+      Camera: GoPro Hero 7 Black
+      Operator: MÁV-START
+      Departure: Kecskemét,</p><p><a href='https://www.youtube.com/watch?v=EGaKyVnvFyI' target='_blank'>NETHERLANDS NS SPRINTER SLT TRAIN REVIEW / DUTCH TRAIN TRIP REPORT</a><a id='EGaKyVnvFyI'>EGaKyVnvFyI</a><br/>Hello and welcome to another trip report!
+      
+      Today we're back in The Netherlands to review an NS Class 2600 Sprinter commuter train.  This is a 6-car train (the 4-car being the Class 2400).  We'll be travelling between Utrecht & Den Haag on a 1 hour & 7 minute journey. Enjoy the ride!
+      
+      Date of Filming: 12/7/20
+      Camera: GoPro Hero 7 Black
+      Operator: NS (Nederlandse Spoorwegen)
+      Departure: Utrecht Centraal, The Netherlands
+      Arrival: The Hague / Den Haag Centraal, The Netherlands
+      Cost: €12.90 (Single Cla</p><p><a href='https://www.youtube.com/watch?v=tzVdvcVCtWU' target='_blank'>300KM/H INTERNATIONAL SNCF TGV RÉSEAU REVIEW / BELGIUM TO FRANCE / FRENCH TRAIN TRIP REPORT</a><a id='tzVdvcVCtWU'>tzVdvcVCtWU</a><br/>Hello and welcome to another Highspeed train review!
+      
+      So today we will be riding aboard a single deck SNCF TGV Réseau set from Brussels-Midi station in Belgian Capital to Lille Europe station in Northern France.  We will be travelling on the HSL1 which connects to the LGV Nord at the French border and has an operating speed of 300km/h. It is primarily used by TGV, Thalys & Eurostar Highspeed trains.
+      
+      Date of Filming: 13/7/20
+      Camera: GoPro Hero 7 Black
+      Operator: SNCF
+      Departure: Brussels-Midi / Br</p><p><a href='https://www.youtube.com/watch?v=hIcdmJHMGZ0' target='_blank'>300KM/H BLAST ACROSS SPAIN / RENFE AVE S-112 REVIEW / SPANISH TRAIN TRIP REPORT</a><a id='hIcdmJHMGZ0'>hIcdmJHMGZ0</a><br/>Hello and welcome to another Highspeed trip report!
+      
+      Today we will be travelling with Spanish national operator Renfe aboard one of the Highspeed AVE services from the Andalucian city of Córdoba to Spain's Capital, Madrid.  We will be riding on a Bombardier AVE S-112 with 12x Talgo Serie VII coaches.  Enjoy the video!
+      
+      Date of Filming: 30/9/20
+      Camera: GoPro Hero 7 Black
+      Operator: Renfe
+      Departure: Córdoba, Spain
+      Arrival: Madrid, Spain
+      Cost: €44.90
+      
+      Check out my review on the older AVE, the S-100 </p><p><a href='https://www.youtube.com/watch?v=lxdrufHluks' target='_blank'>FLIXBUS FROM SLOVENIA TO ITALY TO SEE WHAT ALL THE FLIXING FUSS IS ABOUT - REVIEW & TRIP REPORT!</a><a id='lxdrufHluks'>lxdrufHluks</a><br/>Hello and welcome to another trip report, this time on a bus!
+      
+      Today we will be taking my first ever Flixbus on an international service between Ljubljana, Slovenia & Trieste, Italy.  This is a relativly short journey and one I had to take in the absense of a viable train alternative.  However, that being said... it was good! Sit back and enjoy a rarity on this channel!
+      
+      Date of Filming: 27/8/20
+      Camera: GoPro Hero 7 Black
+      Operator: Flixbus
+      Departure: Ljubljana Bus Station, Slovenia
+      Arrival: Trie</p><p><a href='https://www.youtube.com/watch?v=hD8egONFLNA' target='_blank'>OBB RAILJET FIRST CLASS REVIEW: A PERFECT INTERCITY SERVICE / FROM VIENNA ACROSS THE SEMMERING PASS</a><a id='hD8egONFLNA'>hD8egONFLNA</a><br/>Hello and welcome to another trip report!
+      
+      Today we will be travelling an ÖBB (Austrian Federal Railways) flagship Railjet service in First Class from Austria's capital, Vienna to Villach, near the South border with Slovenia.  We will also be crossing the stunning Semmering Pass and the world famous Kalte Rinne Viaduct from 1854.
+      
+      These trains really couldn't do much better if they tried. They are the perfect mix of functionality, comfort and affordability if you book in advance and make use of </p><p><a href='https://www.youtube.com/watch?v=Vd7vOMuhmBk' target='_blank'>FRANCE'S FREE FUNICULAR RAILWAY / FUNICULAIRE DE PAU REVIEW</a><a id='Vd7vOMuhmBk'>Vd7vOMuhmBk</a><br/>Hello and welcome to a special Sunday bonus video!
+      
+      Today we are in Pau in Southern France and we will be taking the 3 minute ride from the main railway station on the lower level upto the City Centre & Castle on the higher level. A quick but beautiful ride!
+      
+      Date of Filming - 21/7/20
+      
+      Camera - GoPro Hero 7 Black
+      Operator: City of Pau
+      Departure: Funiculaire de Pau - lower station
+      Arrival: Funiculaire de Pau - higher station
+      Cost: FREE
+      
+      You can find my video on the stunning Montserrat Funicular, </p><p><a href='https://www.youtube.com/watch?v=yUsMsUqSKjE' target='_blank'>AIR EUROPA ATR72 TURBOPROP REVIEW / MADRID TO VALENCIA / SPAINISH PLANE TRIP REPORT</a><a id='yUsMsUqSKjE'>yUsMsUqSKjE</a><br/>Hello and welcome to quite an unusual trip report on this channel, by plane!
+      
+      Today we will be travelling aboard an ATR72-500 turboprob aircraft between Madrid & Valencia on an early morning flight between the Spanish capital & it's 3rd city.
+      
+      Date of Filming - 29/8/20
+      
+      Camera - GoPro Hero 7 Black
+      Operator: Swift Air for Air Europa Express
+      Departure: MAD - Madrid Barajas Airport, Spain
+      Arrival: VLC - Valencia Airport, Spain
+      Cost: €9.00
+      
+      Thanks to the channel 'Flying with Dan' for his help with a</p><p><a href='https://www.youtube.com/watch?v=XcR_mVPIKTg' target='_blank'>THE TRAIN THAT CLIMBS A VOLCANO! PANORAMIQUE DES DÔMES FRENCH MOUNTAIN RAILWAY REVIEW</a><a id='XcR_mVPIKTg'>XcR_mVPIKTg</a><br/>Hello and welcome to a special video!  Today we will be taking the rack railway up the side of 'Le Puy de Dome' volcano in mid France.
+      
+      This is a very unique experience riding aboard a Stadler GTW 2/6 electric train fitted with a central rack rail to help us negotiate the 15.5% climb
+      
+      A 'How To...' guide of how to get here from Clermont Ferrand can be found here:
+      https://www.youtube.com/watch?v=PG2v5NDrgV4
+      
+      Date of Filming - 17/7/20
+      Camera - GoPro Hero 7 Black
+      Departure: Le Panoramique des Domes</p><p><a href='https://www.youtube.com/watch?v=PG2v5NDrgV4' target='_blank'>HOW TO GET FROM CLERMONT FERRAND TO PANORAMIQUE DES DÔMES VOLCANO RAILWAY</a><a id='PG2v5NDrgV4'>PG2v5NDrgV4</a><br/>Hello and welcome to another in my 'How to' series of guides. I was trying to find out this information when I visited Clermont but really struggled so I thought I would put together a guide to help other people looking for this information!
+      
+      So today we will be taking the shuttle bus from Clermont Ferrand Station to the lower station of 'Le Panoramique des Domes' which is the rack railway which ascends 'Le Puy de Dome' volcano, one of the tallest in France and the major one in 'Les Chaines des </p><p><a href='https://www.youtube.com/watch?v=sras15h1Vj4' target='_blank'>FRECCIARGENTO ETR600 PENDOLINO REVIEW / ROME TO FLORENCE / ITALIAN HIGHSPEED TRAIN TRIP REPORT</a><a id='sras15h1Vj4'>sras15h1Vj4</a><br/>Hello and welcome to another trip report!
+      
+      Today we will be travelling aboard a Trenitalia Frecciargento ETR600 trainset from Rome to Florence, Roma Termini to Firenze Santa Maria Novella which is scheduled to take 1 hour & 36 minutes.
+      
+      The ETR600 is a Pendolino 'tilting trainset' which allows Highspeed services to travel faster on lines which would normally have restricted top speeds due to the curves and allows for a much better passenger experience.
+      
+      Date of Filming - 4/8/20
+      
+      Camera - GoPro H</p><p><a href='https://www.youtube.com/watch?v=PF9DBzEa7Dw' target='_blank'>MAV-START INTERCITY HUNGARY REVIEW / HUNGARIAN TRAIN TRIP REPORT</a><a id='PF9DBzEa7Dw'>PF9DBzEa7Dw</a><br/>Hello and welcome to another trip report!
+      
+      Today we will be travelling with the Hungarian state railway operator MÁV-START. We are taking an intercity service from the capital, Budapest to the central city of Kecskemét.
+      
+      This was never going to be a luxurious or highspeed ride, let's be honest but it actually surprised me and there's the added bonus of some coaches with fully opening windows for some great shots!
+      
+      Date of Filming - 13/8/20
+      
+      Camera - GoPro Hero 7 Black
+      Operator: MÁV-START
+      Departu</p><p><a href='https://www.youtube.com/watch?v=qOwTQfP2WWg' target='_blank'>BUSINESS CLASS FOR €7! REGIOJET REVIEW / CZECH TRAIN TRIP REPORT</a><a id='qOwTQfP2WWg'>qOwTQfP2WWg</a><br/>Hello and welcome to another trip report!
+      
+      Today we will be travelling with the Czech open access operator, RegioJet from Prague to Pardubice within Czechia.
+      
+      Let's take a look at some of the best value premium fares and what sort of service that returns. You might be surprised!
+      
+      Date of Filming - 10/8/20
+      
+      Camera - GoPro Hero 7 Black
+      Operator: RegioJet
+      Departure: Prague, Czechia
+      Arrival: Pardubice, Czechia
+      Cost: €7.00
+      
+      Follow me on Social Media:
+      http://www.instagram.com/nonstopeurotrip
+      http://ww</p><p><a href='https://www.youtube.com/watch?v=JTonCkqyv7M' target='_blank'>OBB NIGHTJET REVIEW: EUROPE'S BEST SLEEPER TRAIN? / AUSTRIAN TRAIN TRIP REPORT</a><a id='JTonCkqyv7M'>JTonCkqyv7M</a><br/>Hello and welcome to another trip report on a special train!
+      
+      Tonight we will be travelling on an international sleeper train between Venice, Italy & Vienna, Austria with OBB in a solo sleeper on one of their Nightjet trains
+      
+      Come and see how the 11 hour trip between 2 of Europe's great cities can be made so easily and affordably in such comfort, and with lots of treats included!
+      
+      Date of Filming - 4 to 5/8/20
+      
+      Camera - GoPro Hero 7 Black
+      Operator: OBB Nightjet
+      Departure: Venice / Venezia Santa </p><p><a href='https://www.youtube.com/watch?v=VlUfPA6riw4' target='_blank'>HOW TO GET FROM MILAN TO LAKE COMO / ITALIAN TRAIN TRIP REPORT</a><a id='VlUfPA6riw4'>VlUfPA6riw4</a><br/>Hello and welcome to another trip report!
+      
+      This is another 'How To' guide helping you get from Central Milan to Lake Como, while also giving a good review of the new trainset in use on this line. Now there are various way to get here, some fast, some slower and with varying frequencies and this is just one of them.
+      
+      So today we are riding aboard a brand new Hitatchi Caravaggio double decker EMU which forms the commuter service between Milano Porta Garibaldi and Como San Giovanni
+      
+      There are many </p><p><a href='https://www.youtube.com/watch?v=DVeiLe-iEI0' target='_blank'>TOULOUSE TO PAU FOR €1! / SNCF TER REVIEW / FRENCH TRAIN TRIP REPORT</a><a id='DVeiLe-iEI0'>DVeiLe-iEI0</a><br/>Hello and welcome to another trip report!
+      
+      This is the first of my trip reports I'll be publishing where the tickets were bought through SNCF's promotion of €1 ticket sales for use of their express regiona trains 'TER' routes, in the south of France.
+      
+      So today we are riding aboard a 6-car Bombardier Omneo 'Regio 2N' electric multiple unit (EMU) from Toulouse to Pau; we will see some lovely landscapes and fantastic Pyreneean vistas along our 2 hour 42 minute route.
+      
+      There are many more French tra</p><p><a href='https://www.youtube.com/watch?v=iyhYD3eNOvE' target='_blank'>RIDE ON A TGV DEPARTING BRUSSELS UPTO 300KMH</a><a id='iyhYD3eNOvE'>iyhYD3eNOvE</a><br/>Hello and welcome to slightly different video!
+      
+      So today we will be riding aboard a single deck TGV with a departure from Brussels-Midi station in Belgium heading towards Lille Europe station in France.  It is a full uncut ride of around 15 minutes in which we leave Brussels and the suburbs and ride upto to out top speed of 300km/h or 186mph towards the end of the video.
+      
+      We will be travelling on the HSL1 which connects to the LGV Nord at the French border and has an operating speed of 300km/h. </p><p><a href='https://www.youtube.com/watch?v=OTtQlqPN9TM' target='_blank'>THE FANTASTIC NS DDZ DOUBLE DECKER REVIEW / DEN HAAG TO SCHIPHOL AIRPORT / DUTCH TRAIN TRIP REPORT</a><a id='OTtQlqPN9TM'>OTtQlqPN9TM</a><br/>Hello and welcome to another trip report!
+      
+      This is the first report of a new trip, a new year, a new camera, a new style in a post covid Europe... fingers crossed it stays like that! I won't be releasing them in the order filmed but will mix it up a bit to show the wide variety of trains I will be covering and hopefully you will enjoy what I've got to come!
+      
+      So today we will be in The Netherlands riding aboard an NS 'DDZ' or Dubbeldekker Zonering to give it it's full title. An electric multiple </p><p><a href='https://www.youtube.com/watch?v=4Weu5gDf380' target='_blank'>CHANNEL UPDATE JULY 2020 WHILE TRAINSPOTTING AT ZURICH HBF</a><a id='4Weu5gDf380'>4Weu5gDf380</a><br/>This video is a little Channel Update in July 2020 to share how I hope the channel will be going 
+      
+      forward after the Coronavirus pandemic now we are able to travel around Europe again more freely!
+      
+      
+      Lots more ICE's, Railjet's, AVE's, TGV's and scenic and bargain trips to come...I'm excited!
+      
+      
+      Stay safe & I'll see you with new videos again very very soon!</p><p><a href='https://www.youtube.com/watch?v=pVsPpSOB9Jw' target='_blank'>INOUI TGV DUPLEX REVIEW / MARSEILLE TO NICE / FRENCH TRAIN TRIP REPORT</a><a id='pVsPpSOB9Jw'>pVsPpSOB9Jw</a><br/>This is a trip report aboard a double SNCF InOui TGV Duplex along the stunning French Riviera between Marseille & Nice travelling on the upper deck in standard class.
+      
+      This journey was made last year and booked at short notice so the price I paid of €36.00 can be found much cheaper if booking furthur in advance.
+      
+      
+      Follow me on Social Media:
+      http://www.instagram.com/nonstopeurotrip
+      http://www.twitter.com/nonstopeurotrip</p><p><a href='https://www.youtube.com/watch?v=ibN-B9V1G08' target='_blank'>RENFE EUROMED REVIEW / VALENCIA TO BARCELONA / SPAINISH TRAIN TRIP REPORT</a><a id='ibN-B9V1G08'>ibN-B9V1G08</a><br/>This video is of my journey on the Northbound Renfe Euromed service # 1472 which I am taking between Valencia Joaqin Sorolla and Barcelona in Preferente/ First Class along the Mediterranean coast. This service runs upto 12 times every day in both directions, and runs as far south as Alicante. This trip was on a Serie 130 Alvia trainset, travelling at upto 220kmh.
+      
+      This video was filmed last year prior to the Coronavirus lockdown and has had to be reuploaded due to a copyright issue with the orig</p><p><a href='https://www.youtube.com/watch?v=FYEztTNyu0I' target='_blank'>SBB INTERCITY REVIEW / ZURICH TO STUTTGART / SWISS TRAIN TRIP REPORT</a><a id='FYEztTNyu0I'>FYEztTNyu0I</a><br/>This video is of my journey on the Northbound IC4 International Intercity service from Zurich to Stuttgart in Standard Class.
+      
+      It's a great way to get between these fantastic European cities and only costs €24.40 for a near 3 hour train ride.
+      
+      Comfortable, relaxing and efficient; as the Swiss do best!
+      
+      This video was filmed last year prior to the Coronavirus lockdown. Stay safe everyone!</p><p><a href='https://www.youtube.com/watch?v=wb8Bkynge4w' target='_blank'>RENFE AVANT S104 HIGHSPEED TRAIN REVIEW / SEVILLA TO MALAGA / SPANISH TRAIN TRIP REPORT</a><a id='wb8Bkynge4w'>wb8Bkynge4w</a><br/>This video is a Spanish Train Trip Report on the Renfe Avant Highspeed service from Sevilla to Málaga via Cordoba.
+      
+      We will be travelling at upto 250km/h (155mph) onboard the second tier train of Spain's Highspeed network.
+      
+      The cost of the standard class ticket was €46.70, booked 1 week before travel. Savings can be made by booking much furthur in advance.
+      
+      This video is a re-edit trial of a 'no music' video for me, so let me know what you guys think?!</p><p><a href='https://www.youtube.com/watch?v=5NjBz8WeBPE' target='_blank'>NS DB INTERNATIONAL ICE3M REVIEW / COLOGNE TO BRUSSELS / GERMAN TRAIN TRIP REPORT</a><a id='5NjBz8WeBPE'>5NjBz8WeBPE</a><br/>This is a trip report of my journey on the NS/DB International ICE #14 from Cologne/ Koln Hbf to Brussels-Midi in Belgium. This is a busy route but another amazing train trip linking major European cities!
+      
+      Check out Simply Railway; his Channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=0BcaHmpy4Ck' target='_blank'>TRENITALIA FRECCIABIANCA ETR460 REVIEW / GENOA TO PISA / ITALIAN TRAIN TRIP REPORT</a><a id='0BcaHmpy4Ck'>0BcaHmpy4Ck</a><br/>This is a Trip Report on my Frecciabianca Trip from Genoa (Genova Piazza Principe) to Pisa Centrale on a pilgrimage to see the famous Leaning Tower for the first time!
+      
+      A great trip costing €27 in 2nd class or €37 in 1st class with some scenic views on this regional highspeed train. Enjoy!</p><p><a href='https://www.youtube.com/watch?v=MOsn7Lb9dyA' target='_blank'>RENFE CERCANIAS REVIEW / CASTELLO TO VALENCIA / SPANISH TRAIN TRIP REPORT</a><a id='MOsn7Lb9dyA'>MOsn7Lb9dyA</a><br/>This is a Trip Report of my Line 6 Renfe Cercanías journey from Castellón de la Plana to Valencia Estació del Nord on the Spanish East Coast. At a cost of just €5.80 it's great value for a regional train service. It might not be flashy, but it's definitely functional!
+      
+      
+      Check out Simply Railway; his channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=QVb_3WghE8Y' target='_blank'>DB ICE / INTERCITY EXPRESS COMPILATION / GERMANY & SWITZERLAND</a><a id='QVb_3WghE8Y'>QVb_3WghE8Y</a><br/>This video is a little compilation of ICE trains arriving and departing at some of the station I travelled through in Summer 2019.</p><p><a href='https://www.youtube.com/watch?v=hyoqd7DIl6g' target='_blank'>THE TRAIN ACROSS THE ALPS! SBB EUROCITY ETR610 PENDOLINO REVIEW / MILAN TO ZURICH TRIP REPORT</a><a id='hyoqd7DIl6g'>hyoqd7DIl6g</a><br/>This video of of the absolutely stunning trans-Alps journey from Milan, Italy to Zurich, Switzerland. This is onboard the fantastic SBB CFF FFS Swiss Railways RABe 503 ETR610 Pendolino 'Tilting Train' capable of 250km/h (155mph).  You won't want to miss this one, the scenery is the best i've ever come accross on a train trip so far! Enjoy!
+      
+      Check out my review of the Trenitalia ETR600 version of this train between Rome & Florence here:
+      https://www.youtube.com/watch?v=sras15h1Vj4&t</p><p><a href='https://www.youtube.com/watch?v=mgtrnUUHqjo' target='_blank'>MONTE-CARLO, MONACO / F1 TRACK, CASINO & HARBOUR / WALKING TOUR</a><a id='mgtrnUUHqjo'>mgtrnUUHqjo</a><br/>This video is a little walking tour of the city of Monte-Carlo, in the Principality of Monaco.  It includes the famours Casino de Monte-Carlo, a walk around some of the F1 track, and the amazing harbour, with it's multi million pound yachts. Enjoy!
+      
+      Check out Simply Railway; his channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=v9jcqkL9cr4' target='_blank'>RENFE REGIONAL EXPRESS / ALICANTE TO VALENCIA / SPANISH TRAIN TRIP REPORT</a><a id='v9jcqkL9cr4'>v9jcqkL9cr4</a><br/>This is a trip report of a Renfe Regional Express service #14109 departing from Alicante (Alacant Terminal) at 19.28 to Valencia Nord (Estacion del Norte) arriving at 21.43. Total cost €13.50, great value!
+      
+      Check out Simply Railway; his channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=-G0ReTtzc6k' target='_blank'>RENFE INTERCITY / VALENCIA TO GANDIA / SPANISH TRAIN TRIP REPORT</a><a id='-G0ReTtzc6k'>-G0ReTtzc6k</a><br/>This is a Spanish train trip report of a Renfe Intercity service originating from Madrid Atocha, arriving into Valencia Joaquin Sorolla, splitting in half and then we will be travelling from Valencia top Gandia, south, along the Mediterranean coast.  Another great value and effiecient Spanish train service.  They may not be frequent, but they are good!
+      
+      Check out Simply Railway; his channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=IVvqVuixv1o' target='_blank'>FRECCIAROSSA 1000 / BRESCIA TO MILAN / ITALIAN TRAIN TRIP REPORT</a><a id='IVvqVuixv1o'>IVvqVuixv1o</a><br/>This is an Italian Train Trip Report of a Trenitalia Frecciarossa 1000 in Premium Class from Brescia to Milan Central Station (Milano Centrale).  The train started its journey in Venice.
+      
+      Check out Simply Railway; his channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=K1bTNEw8na4' target='_blank'>RENFE RODALIES / MANRESA TO BARCELONA / SPANISH TRAIN TRIP REPORT</a><a id='K1bTNEw8na4'>K1bTNEw8na4</a><br/>This is a trip report on the Renfe Rodalies de Catalunya commuter train service on the L4 line from Manresa to Barcelona Central.  These trains are such great value at only €6.30 for the 1 hours & 10 minute trip.
+      
+      Check out Simply Railway; his channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=wie3tfOAJXE' target='_blank'>THE ORIENT EXPRESS / DEPARTING BRESCIA, ITALY</a><a id='wie3tfOAJXE'>wie3tfOAJXE</a><br/>This is my unplanned discovery of the Orient Express at Brescia, Italy and it departing en-route to Venice.
+      
+      Check out Simply Railway; his channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=drVC_uBkwao' target='_blank'>THELLO REVIEW / 1ST CLASS / NICE TO GENOA / FRENCH ITALIAN TRAIN TRIP REPORT</a><a id='drVC_uBkwao'>drVC_uBkwao</a><br/>This trip report is of the Thello service from Nice to Genoa, with the train continuing onto Milan.  This is definitely the most civilised way to travel along the French & Italian Rivieras.</p><p><a href='https://www.youtube.com/watch?v=HUpyl72mnxE' target='_blank'>MONTSERRAT FUNICULAR RAILWAY REVIEW / BARCELONA, CATAYUNYA / FULL RIDE</a><a id='HUpyl72mnxE'>HUpyl72mnxE</a><br/>This video is of the Saint Joan Funicular railway which takes you higher up Montserrat Mountain after you drive up or take either the Narrow Gauge Rack Railway 'Cremallera' or Cable Car to the Monastery level. The other funicular is currently closed for renovation.</p><p><a href='https://www.youtube.com/watch?v=EGZ9FRZgtdI' target='_blank'>TGV DUPLEX 1ST CLASS / PERPIGNAN - TOULOUSE / FRENCH TRAIN TRIP REPORT</a><a id='EGZ9FRZgtdI'>EGZ9FRZgtdI</a><br/>This trip report is of the SNCF TGV Duplex from Perpignan to Toulouse Matabiau
+      
+      Check out Simply Railway; His Channel is AWESOME!
+      https://www.youtube.com/channel/UCSs7KkoAH1hZ08mUIndnRZQ</p><p><a href='https://www.youtube.com/watch?v=Pyof6DS60ao' target='_blank'>HOW TO GET FROM BARCELONA AIRPORT TO CITY & TRAIN STATION</a><a id='Pyof6DS60ao'>Pyof6DS60ao</a><br/>This video is a video to assist you with transferring form Barclona Airport (All terminals) to Barceona Sants Main Train Station & Barcelona City. My advice is to buy the T10 (10 trip card) for €10.20 as you can use it for multiple people and it works on all buses, metro and trams in the city. It also works for the R2 Rodalies airport line, but NOT for the L9 Metro airport line (no idea why!)</p><p><a href='https://www.youtube.com/watch?v=OWEYVLr4ZTA' target='_blank'>RENFE EUROMED / VALENCIA - ALICANTE / SPANISH TRAIN TRIP REPORT</a><a id='OWEYVLr4ZTA'>OWEYVLr4ZTA</a><br/>This video is of my journey on the southbound Renfe Euromed service # 1101 which runs between Barcelona Sants & Alicante Terminal along the Mediterranean coast multiple times every day. This trip was on a double Alvia trainset, travelling at upto 220kmh.</p><p><a href='https://www.youtube.com/watch?v=b6LCOkhVjIk' target='_blank'>ALSA BUS / ALMERIA - MURCIA / SPANISH BUS TRIP REPORT</a><a id='b6LCOkhVjIk'>b6LCOkhVjIk</a><br/>This video is a trip report on Spanish bus company ALSA on a journey from Almeria to Murcia in Spain. Come along for the ride!</p><p><a href='https://www.youtube.com/watch?v=n6JUbpQ-Kgo' target='_blank'>ALSA BUS / MALAGA - ALMERIA / SPANISH BUS TRIP REPORT</a><a id='n6JUbpQ-Kgo'>n6JUbpQ-Kgo</a><br/>This is a trip report on Spanish bus company ALSA from Malaga Estacion de Autobuses to Almeria Estacion Intermodal.
+      
+      
+      Please subscribe as I upload a new video on YouTube every Friday at 12pm UK / 1pm CET
+      
+      
+      Please follow me on Social Media:
+      http://www.instagram.com/nonstopeurotrip
+      http://www.twitter.com/nonstopeurotrip</p><p><a href='https://www.youtube.com/watch?v=ExZfnEZnO9U' target='_blank'>RENFE TALGO / MURCIA - VALENCIA / SPANISH TRAIN TRIP REPORT</a><a id='ExZfnEZnO9U'>ExZfnEZnO9U</a><br/>This video is a trip report of the Renfe Talgo #460 service originating in Lorca, destination Barcelona Sants via Alicante & Valencia. These trains are such great value for a 200kph train trip of over 3 hours for €20.70. I'm sorry that the onboard footage is somewhat lacking as the train was so busy and I spent a lot of the trip chatting to my Spanish seat neighbour Jaime :-)</p><p><a href='https://www.youtube.com/watch?v=ANCxZKlxB_o' target='_blank'>HOW TO GET FROM MALAGA STATION TO THE COSTA DEL SOL AIRPORT & RESORTS INCLUDING FUENGIROLA</a><a id='ANCxZKlxB_o'>ANCxZKlxB_o</a><br/>This video is another in my 'How to...' series which shows you how to get from Málaga Maria Zambrano Main Station to get to the Malaga Costa del Sol Airport, Fuengirola and other resorts on the Costa del Sol using the C1 'Cercanias' local train</p><p><a href='https://www.youtube.com/watch?v=q_O5C0JWJFo' target='_blank'>A GUIDE TO THE MALAGA METRO / METRO DE MALAGA</a><a id='q_O5C0JWJFo'>q_O5C0JWJFo</a><br/>A Guide to the Málaga Metro - Málaga in 4K</p><p><a href='https://www.youtube.com/watch?v=xx5t_-hmbQg' target='_blank'>A GUIDE TO THE SEVILLE METRO / METRO DE SEVILLA</a><a id='xx5t_-hmbQg'>xx5t_-hmbQg</a><br/>A Guide to the Seville Metro - Sevilla in 4K</p><p><a href='https://www.youtube.com/watch?v=i2AoxKqa_Lg' target='_blank'>A GUIDE TO THE GRANADA TRAMS / METROPOLITANO GRANADA</a><a id='i2AoxKqa_Lg'>i2AoxKqa_Lg</a><br/>Granada Tram/Metro Rapid Transit System - Metropolitano Granada</p><p><a href='https://www.youtube.com/watch?v=NhHM32PWJUg' target='_blank'>RENFE MEDIA DISTANCIA / ALMERIA - GRANADA / SPANISH TRAIN TRIP REPORT</a><a id='NhHM32PWJUg'>NhHM32PWJUg</a><br/>This is a Spanish train trip report on a Renfe Media Distancia MD service from Almería to Granada in Andalucía.</p><p><a href='https://www.youtube.com/watch?v=aFg2NfGNP0Q' target='_blank'>HOW TO GET FROM ALMERIA AIRPORT TO THE CITY AND THE BUS & TRAIN STATION</a><a id='aFg2NfGNP0Q'>aFg2NfGNP0Q</a><br/>Guide of How to get from Almería Airport to Almería City & Bus/Train Station. Bus Route No.30, €1.05 per adult. Timetable included in video!</p>
+
+
+
+
+  </div>
+  <div id="map"></div>
+</div>
+
+<script>
+  var map;
+
+  function addMap() {
+    mapboxgl.accessToken = 'pk.eyJ1Ijoib2NlYW5pY2lhbiIsImEiOiJjbHA1czlqbXIxcWM3MmxxeXlmc2IxdDlhIn0.vikGOfXp6DpnAHLC_6DHBw';
+
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [13.04, 49.8],            // starting position [lng, lat]
+      zoom: 2
+    });
+
+    return map;
+  }
+
+  function addLeafletMap() {
+    somewhere = [51.505, -0.09];
+    zurich = [47.3769, 8.5417];
+    var map = L.map('map').setView(zurich, 5);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    return map;
+  }  
+
+  function add_map_pin(locationNames, youtubeVideoId) {
+    var circleMarker = L.icon({
+      iconUrl: '<%= image_path('circle-outline-16.png') %>',
+      iconSize: [16, 16],
+      iconAnchor: [8, 16],              // point of the icon which will correspond to marker's location
+      popupAnchor: [0, -18]             // point from which the popup should open relative to the iconAnchor
+    });
+
+    var latlngs = [];
+
+    locationNames.forEach(function(locationName) {
+        var url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(locationName)}.json?access_token=pk.eyJ1Ijoib2NlYW5pY2lhbiIsImEiOiJjbHA1czlqbXIxcWM3MmxxeXlmc2IxdDlhIn0.vikGOfXp6DpnAHLC_6DHBw`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.features && data.features.length > 0) {
+                    var coordinates = data.features[0].center;
+                    latlngs.push([coordinates[1], coordinates[0]]);
+                    marker = L.marker([coordinates[1], coordinates[0]], {icon: circleMarker}).addTo(map);                    
+                    var popupContent = `<h2>${locationName}</h2><iframe width="200" height="150" src="https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1" frameborder="0" allowfullscreen></iframe>`;
+                    marker.bindPopup(popupContent);
+                    marker.on('click', function() {
+                      focusOnElement(youtubeVideoId);
+                    });                
+                    // IM - Not where I want to draw this line, but it is out of scope later. Can't see why
+                    if(latlngs.length==2) {
+                      var polyline = L.polyline(latlngs, {
+                        color: 'blue',       // Line color
+                        weight: 2,           // Line width
+                        dashArray: '8, 16', // Dashing [dash length, gap length]
+                        dashOffset: '16'
+                        }).addTo(map);
+                    }
+                } else {
+                    console.error("Geocoding failed for " + locationName);
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching geocoding data:", error);
+            });
+    });
+  }
+
+  function focusOnElement(anchorId) {
+    var element = document.getElementById(anchorId);
+    if(element) {
+        element.focus();
+    }
+  }
+
+  window.onload = function() {
+    map = addLeafletMap();
+    addPins();
+  };
+
+  function addPins() {
+    add_map_pin(['Trondheim, Norway', 'Bodø, Norway'], "kmIXjl6W7J4");
+    add_map_pin(['Oslo, Norway', 'Trondheim, Norway', 'Bodø, Norway'], "avFXVQlglSQ");
+    add_map_pin(['Vienna, Austria', 'Hamburg, Germany'], "bZInjerE3a0");
+    add_map_pin(['Istanbul, Turkey', 'Sofia, Bulgaria'], "d8f4CwJSspM");
+  //part2
+  add_map_pin(['Shanghai Pudong Airport, China'], "lgv8bOhHXhs");
+  add_map_pin(['Batumi, Georgia', 'Tbilisi, Georgia'], "uO_L98dcOCI");
+  add_map_pin(['Taiwan, Taiwan'], "1hDug_f-7V0");
+  add_map_pin(['Jakarta, Indonesia', 'Bandung, Indonesia'], "bkcgW4RdjR0");
+  add_map_pin(['Casablanca, Morocco', 'Tangier, Morocco'], "0KzfMK8ogIw");
+  add_map_pin(['Shanghai, China', 'Nanjing, China', 'Beijing, China'], "f5wG0eU3NM4");add_map_pin(['La Coruña, Spain', 'Santiago de Compostela, Spain'], "ViyQUI8jtRs");
+  add_map_pin(['Delhi, India', 'Mumbai, India'], "x888RMI23eY");
+  add_map_pin(['Gothenburg, Sweden', 'Stockholm, Sweden'], "WWLK0_VfdMs");
+  add_map_pin(['Badulla, Sri Lanka', 'Colombo, Sri Lanka'], "K3xWvICI6eQ");
+  add_map_pin(['Tashkent, Uzbekistan', 'Samarkand, Uzbekistan'], "OHy6FfAuFR0");
+  add_map_pin(['Kuala Lumpur, Malaysia', 'Butterworth, Malaysia'], "gloQG1HRZ_A");
+  add_map_pin(['Hungary', 'Slovakia'], "802V2fg7iBk");
+  add_map_pin(['Thailand', 'Myanmar'], "FhgQp8pYX-4");
+  add_map_pin(['Paris, France', 'Latour-de-Carol, France'], "TUbz8cVzNh0");
+  add_map_pin(['Casablanca, Morocco', 'Fes, Morocco'], "r9VgojGeMVw");
+  add_map_pin(['Sri Lanka'], "Pl7s5oC0hR8");
+  add_map_pin(['Madrid, Spain', 'Barcelona, Spain'], "WEHtmo76k_c");
+  add_map_pin(['Darjeeling, India', 'Siliguri, India', 'Kurseong, India', 'Siliguri, West Bengal, India'], "Bro2lFVdI2k");
+  add_map_pin(['Brussels, Belgium', 'Luxembourg'], "AMyXo3ahAik");
+  add_map_pin(['Tokyo, Japan', 'Takamatsu, Japan'], "UB-I-8ZPxn0");
+  add_map_pin(['Kyiv, Ukraine', 'Odesa, Ukraine'], "GCm-m-HDK0c");
+  add_map_pin(['Busan, South Korea', 'Seoul, South Korea'], "3qD4ojYCFEE");
+  add_map_pin(['Singapore', 'Kuala Lumpur'], "vdnE18UYo2k");
+  add_map_pin(['Cairo, Egypt', 'Luxor, Egypt'], "VeI17Qwb9mU");
+  add_map_pin(['Stockholm, Sweden', 'Hamburg, Germany', 'Copenhagen Airport, Denmark'], "R4QWzZyrsS4");
+  add_map_pin(['Varanasi, India', 'New Delhi, India'], "tit1QJF4kcE");
+  add_map_pin(['Berlin, Germany', 'Warsaw, Poland'], "1BSKgM_zReY");
+  add_map_pin(['London, UK', 'Amsterdam, Netherlands'], "5gAvby5JiWE");
+  add_map_pin(['Kathmandu, Nepal', 'Kuala Lumpur'], "W0qsr6BLBXQ");
+  add_map_pin(['Austria', 'Italy'], "Rn7Zjagv_yw");
+  add_map_pin(['Madrid, Spain', 'Málaga, Spain'], "QAPtSuI3FhE");
+  add_map_pin(['Chennai, India'], "JxypgNPOtkw");
+  add_map_pin(['Locarno, Switzerland', 'Lucerne, Swkitzerland'], "skowG_eqA5k");
+  add_map_pin(['Sintra, Portugal', 'Lisbon, Portugal'], "_58z3RGoSAA");
+  add_map_pin(['Egypt', 'Cairo', 'Alexandria'], "f5k2JXdVDgg");
+//part3
+  add_map_pin(['Bengaluru, India', 'New Delhi, India'], "SOWQEBlREvU");
+  add_map_pin(['Phnom Penh, Cambodia', 'Battambang, Cambodia'], "QIWPXTEzhDI");
+  add_map_pin(['Paris, France', 'Milan, Italy'], "72ZvArEpG28");
+  add_map_pin(['Gothenburg, Sweden', 'Stockholm, Sweden'], "5rqjKeVxLzs");
+  add_map_pin(['Osaka, Japan', 'Tokyo, Japan'], "16CJpxkHudA");
+  add_map_pin(['Bangkok, Thailand', 'Surat Thani, Thailand', 'Koh Phanang, Thailand', 'Koh Samui, Thailand'], "7wapQcogcGE");
+  add_map_pin(['Salzburg, Austria', 'Innsbruck, Austria'], "ORBSh5trPn8");
+  add_map_pin(['Riihimäki, Finland','Lahti, Finland'], "79bk1xqremY");
+  add_map_pin(['Rotterdam, Netherlands', 'Utrecht, Netherlands'], "l8kGDZ9h2_I");
+  add_map_pin(['Kathmandu, Nepal'], "VULdsiF_eCY");
+  add_map_pin(['Hamburg, Germany', 'Copenhagen, Denmark'], "NlKqLPbxxdE");
+  add_map_pin(['Norway'], "CebRUcO8dPE");
+  add_map_pin(['Sendai, Japan', 'Tokyo, Japan'], "YyjRUs8rMLE");
+  add_map_pin(['Seoul, South Korea', 'Andong, South Korea'], "56yXbIUq1bI");
+  add_map_pin(['Los Angeles, California', 'San Francisco, California'], "92ovhKunMyo");
+  add_map_pin(['Hakodate, Japan', 'Sapporo, Japan'], "kVb6KaZhCYE");
+  add_map_pin(['Domodossola, Italy', 'Locarno, Switzerland'], "Ts5_HLzW9Mg");
+  add_map_pin(['Hanoi, Vietnam', 'Hue, Vietnam'], "-nrMMBin5Vw");
+  add_map_pin(['Osaka, Jafpan', 'Shizuoka, Japan'], "F7bXqXLULM0");
+  add_map_pin(['İstanbul, Turkey', 'Ankara, Turkey'], "QTSp9P8lspY");
+  add_map_pin(['Tbilisi, Georgia', 'Yerevan, Armenia'], "Qf7SFS3xQr4");
+  add_map_pin(['Vientiane, Laos','Luang Prabang, Laos'], "L4r43L2pu98");
+  add_map_pin(['Cardiff, UK', 'London, UK'], "hvpVyVoYCAQ");
+  add_map_pin(['Bergen, Norway', 'Stavanger, Norway'], "ozzWZOO3NUs");
+  add_map_pin(['Bangkok, Thailand'], "ujZCkvXqnII");
+  add_map_pin(['SINGAPORE, Singapore', 'KUALA LUMPUR, Malaysia'], "otibMwgrEm4");
+  add_map_pin(['Villefranche - Vernet-les-Bains', 'Latour-de-Carol, France'], "AabOfyH9D_0");
+  add_map_pin(['Porto, Portugal', 'Pochinho, Portugal'], "W5B2l1LaBY4");
+  add_map_pin(['Manila, Philippines'], "Nh0w3rGdMGY");
+  add_map_pin(['Barcelona, Spain', 'Madrid, Spain'], "qOgJRDeGzPU");
+  add_map_pin(['Oslo, Norway', 'Bergen, Norway'], "5UGKtU98Y9I");
+  add_map_pin(['Valladolid, Spain', 'Madrid, Spain'], "1tW2MCZwaJk");
+  add_map_pin(['Oslo, Norway', 'Bergen, Norway'], "Q_NBKTaQqiY");
+  add_map_pin(['Konya, Turkey', 'İstanbul, Turkey'], "G7pctqcZw-Y");
+  add_map_pin(['Bratislava, Slovakia', 'Vienna, Austria'], "L5tawUAg3WQ");
+  add_map_pin(['UK'], "1_pE5sH62Vg");
+  add_map_pin(['Leipzig Hbf, Germany', 'Frankfurt (Main) Hb, Germany'], "C6_TbRrpUS8");
+  add_map_pin(['Singapore City, Singapore', 'Kuala Lumpur, Malaysia'], "VswwGfJD2Nw");
+//part4
+  add_map_pin(['Amsterdam, Netherlands', 'Brussels, Belgium'], "HP4opFVekwY");
+  add_map_pin(['Vienna, Austria', 'Zürich, Switzerland'], "22LGSFsaeZE");
+  add_map_pin(['Stockholm, Sweden', 'Umeå, Sweden'], "EqCqBSeicUY");
+  add_map_pin(['Bologna, Italy', 'Pescara, Italy'], "doZXhZou4wc");
+  add_map_pin(['Wroclaw, Poland', 'Prague, Czech Republic'], "19E1ctsoaAA");
+  add_map_pin(['Athens, Greece', 'Thessaloniki, Greece'], "JcjDSRvJf8o");
+  add_map_pin(['Stavanger, Norwegian Fjords', 'Oslo, Norway'], "UOJCL1w-Bs8");
+  add_map_pin(['Riga, Latvia', 'Vilnius, Lithuania'], "qFS7t9SwaDc");
+  add_map_pin(['Helsinki, Finland', 'Rovaniemi, Finland'], "8D1WhdE-3bg");
+  add_map_pin(['Warsaw, Poland', 'Kraków, Poland'], "r2yvvoFJLJU");
+  add_map_pin(['Trieste, Italy', 'Venice, Italy'], "UARNA76Gzqc");
+  add_map_pin(['Salzburg, Austria', 'Berchtesgaden Alps'], "LkQlV6c1wIU");
+  add_map_pin(['Vienna, Austria', 'Salzburg, Austria'], "JX4oe-Qe1LQ");
+  add_map_pin(['İzmir, Turkey', 'Konya, Turkey'], "G59QL8iAKVE");
+  add_map_pin(['Kajaani, Finland', 'Helsinki, Finland'], "tu_yOqFj3eo");
+  add_map_pin(['Ferrol, Spain', 'Oviedo, Spain'], "YZTmP6zpuFw");
+  add_map_pin(['UKRAINIAN RED CROSS'], "tKTryIrVp0Y");
+  add_map_pin(['Bordeaux, France', 'Marseille, France'], "_fPUzmG9EZg");
+/*
+  //part5
+  add_map_pin(['Milan, Italy'], "YgRorpQU_S8");
+  add_map_pin(['Rome, Italy', 'Milan, Italy'], "TVQen-9A6lA");
+  add_map_pin(['Budapest, Hungary', 'Tapolca'], "J4Mt4s4EhnA");
+  add_map_pin(['Lomnický štít, Slovakia', 'Bratislava, Slovakia', 'Kosice, Slovakia'], "oTxkoFTU1Ko");
+  add_map_pin(['Slovakia'], "up8wQDKAtO8");
+  add_map_pin(['Chernobyl, Ukraine'], "btWYWlMKEaQ");
+  add_map_pin(['Lviv, Ukraine', 'Kyiv, Ukraine'], "L47hfzpwxeI");
+  add_map_pin(['Denmark', 'Copenhagen', 'Roskilde'], "scCMBmyx8UQ");
+  add_map_pin(['Kraków, Poland', 'Wrocław, Poland'], "XZjkaslVSgo");
+  add_map_pin(['Wuppertal, Germany'], "jVv0ILyMJD4");
+  add_map_pin(['Chur, Switzerland', 'St. Moritz, Switzerland', 'Tirano, Italy'], "dsx3N7LWnVQ");
+  add_map_pin(['Innsbruck, Seefeld in Tirol'], "sBjNdpv7yy4");
+  add_map_pin(['Barcelona, Spain', 'Madrid, Spain'], "wr8hPAYtWag");
+  add_map_pin(['Budapest, Hungary'], "4te3Y48L4Ts");
+  add_map_pin(['Gothenburg, Sweden', 'Stockholm, Sweden'], "uGx0T1I24Sw");
+  add_map_pin(['Civitavecchia, Italy', 'Rome, Italy'], "ksOw9CLkM7w");
+  add_map_pin(['Košice, Slovakia', 'Bratislava, Slovakia'], "YuP-mj6Otas");
+  add_map_pin(['Umeå, Sweden', 'Gothenburg, Sweden'], "rE9FBv7-pi8");
+  add_map_pin(['Hvalsø, Denmark', 'Copenhagen, Denmark'], "C4umXSU8at4");
+  
+  //part6
+  add_map_pin(['Athens, Greece', 'Kiato, Greece'], "JpICdt51smM");
+  add_map_pin(['Entroncamento, Portugal', 'Lisbon, Portugal'], "MkDrQb4Tk2M");
+  add_map_pin(['Madrid, Spain', 'Chamartín, Madrid, Spain', 'Santander, Spain'], "5lsvBJ-ggM8");
+  add_map_pin(['Vienna, Austria', 'Munich, Germany'], "G5WORSI4TMs");
+  add_map_pin(['Budapest, Hungary', 'Szob, Hungary', 'Slovakian border'], "vwLCrp-AjkM");
+  add_map_pin(['Marseille, France', 'Nice, France'], "HGXdkeSHBbw");
+  add_map_pin(['Lisbon, Portugal'], "9MQHOihHUJI");
+  add_map_pin(['Valencia, Spain', 'Alicante, Spain'], "BTsSXlpGRiU");
+  add_map_pin(['Kyiv, Ukraine'], "CUVtKYiyoac");
+  add_map_pin(['Bilbao, Spain', 'Valencia, Spain'], "YMln6aPMPr0");
+  add_map_pin(['Milan, Italy', 'Palermo, Italy', 'Strait of Messina, Europe'], "vlaoEqT_7s8");
+  add_map_pin(['Porto, Portugal', 'Pocinho, Portugal'], "DuTwfkJfqWU");
+  add_map_pin(['Vienna, Austria', 'Prague, Czech Republic', 'Budapest, Hungary'], "aX9K71jF1TI");
+  add_map_pin(['Barcelona, Spain', 'Madrid, Spain'], "dEST3jRe4e0");
+  add_map_pin(['Amsterdam, The Netherlands', 'Utrecht, The Netherlands'], "dsnxs1KIFYg");
+  add_map_pin(['Palma, Mallorca', 'Valencia, Spain', 'Ibiza'], "E3ow6fa0Fq8");
+  add_map_pin(['Budapest, Hungary', 'Bratislava, Czech Republic'], "T3Wku3p0SWc");
+  add_map_pin(['Madrid, Spain', 'Barcelona, Spain'], "gaDr_GEt5hc");
+  add_map_pin(['Milano Centrale Station, Italy', 'Milano Malpensa Airport, Italy'], "6V7P_QrNRag");
+  add_map_pin(['Lille, France', 'Paris, France'], "eewmS9MSS3s");
+  add_map_pin(['Santander, Spain', 'Bilbao, Spain'], "nFiWA0q4Hlc");
+  add_map_pin(['Ljubljana, Slovenia', 'Lesce-Bled, Slovenia'], "BoJq2PzW8Zw");
+  add_map_pin(['Perpignan, ', ' Pyrenees '], "ovQp3RkB4xc");
+  add_map_pin(['Naples, Italy', 'Rome, Italy'], "TbFRWBZYcSA");
+  add_map_pin(['Italian, AVE S-112', 'FRECCIAROSSA 1000'], "CFKvjdk9Lvw");
+  add_map_pin(['Vienna, Austria', 'St. Pölten, Austria'], "RsKMmWH4q2I");
+  add_map_pin(['Wien Hauptbahnhof, Vienna', 'Wien Westbahnhof, Vienna'], "81ckhWx9d6Q");
+  add_map_pin(['Palermo, Sicily', 'Mount Etna, Italy', 'Catania, Sicily'], "HH0TXI52NBU");
+  add_map_pin(['Lajosmizse, Hungary', 'Budapest, Hungary'], "eQuCkv9_8V4");
+  add_map_pin(['Avignon, France', 'Portbou, Spain'], "9znAJThBU2o");
+  add_map_pin(['Mallorca, Spain'], "aahUYku-vgQ");
+  add_map_pin(['Valencia, Spain', 'Palma, Mallorca'], "Y1gkuJF9nFY");
+  add_map_pin(['Nice, France', 'Milan, Italy', 'French Riviera', 'Monaco', 'Mediterranean', 'Ligurian Seas', 'Milan'], "UBW8G4z6b3w");
+  add_map_pin(['Ljubljana, Slovenia'], "1pyM4Co5qWM");
+  add_map_pin(['Villach, Austria', 'Ljubljana, Slovenia'], "TD_02nS_UtM");
+  add_map_pin(['Pardubice, Czechia', 'Prague, Czechia'], "xHT5agu3fwk");
+  add_map_pin(['Alicant Terminal, Alicante, Spain', 'Madrid Puerta de Atocha, Spain'], "53pfZWM8hzs");
+  add_map_pin(['Rome, Italy', 'Civitavecchia, Italy'], "gJwFwPPJveM");
+  add_map_pin(['Munich, Germany', 'Berlin, Germany'], "7nUfqlA9yaE");
+  add_map_pin(['Amsterdam, The Netherlands', 'Brussels-Midi/Zuid, Belgium'], "VofmBQKP2wk");
+  add_map_pin(['Avignon TGV, France', 'Avignon Centre, France'], "c4B2f0VC9Os");
+  add_map_pin(['Paris, France', 'Avignon, France'], "x4rADgCzr3M");
+  add_map_pin(['Naples, Italy'], "_OFuE2o8znU");
+  add_map_pin(['Siracusa, Italy', 'Messina, Italy', 'San Giovani, Italy', 'Naples, Italy'], "o8k0AQPKsOQ");
+  add_map_pin(['Siófok, Hungary', 'Budapest, Hungary'], "q0Cli6plfp8");
+  add_map_pin(['Valencia, Spain', 'Córdoba, Spain'], "A3JASgkQylg");
+  add_map_pin(['St. Pölten, Austria', 'Vienna, Austria'], "27tHKiBFyz0");
+  add_map_pin(['Nîmes, France', 'Clermont Ferrand, France'], "EOGuV166pnU");
+  add_map_pin(['Berlin, Germany', 'Prague, Czech Republic'], "geItkm1E84k");
+  add_map_pin(['Venice, Italy', 'Milan, Italy'], "rslLB91iSho");
+  add_map_pin(['Kecskemét, Hungary', 'Lajosmizse, Hungary'], "q6hPoe4Jjik");
+  add_map_pin(['Utrecht Centraal, The Netherlands', 'The Hague / Den Haag Centraal, The Netherlands'], "EGaKyVnvFyI");
+  add_map_pin(['Brussels, Belgium', 'Lille, France'], "tzVdvcVCtWU");
+  add_map_pin(['Córdoba, Spain', 'Madrid, Spain'], "hIcdmJHMGZ0");
+  add_map_pin(['Vienna, Austria','Villach, Slovenia'], "hD8egONFLNA");
+  add_map_pin(['Pau, France'], "Vd7vOMuhmBk");
+  add_map_pin(['Madrid, Spain', 'Valencia, Spain'], "yUsMsUqSKjE");
+  add_map_pin(['Clermont Ferrand, mid France'], "XcR_mVPIKTg");
+  add_map_pin(['Clermont Ferrand, France', 'Le Panoramique des Dômes, France', 'Le Puy de Dôme, France', 'Les Chaines des, France'], "PG2v5NDrgV4");
+  add_map_pin(['Rome, Italy', 'Florence, Italy', 'Roma Termini, Rome, Italy', 'Firenze Santa Maria Novella, Florence, Italy'], "sras15h1Vj4");
+  add_map_pin(['Budapest, Hungary', 'Kecskemét, Hungary'], "PF9DBzEa7Dw");
+  add_map_pin(['Prague, Czechia', 'Pardubice, Czechia'], "qOwTQfP2WWg");
+  add_map_pin(['Venice, Italy', 'Vienna, Austria'], "JTonCkqyv7M");
+  add_map_pin(['Milan, Italy', 'Lake Como, Italy'], "VlUfPA6riw4");
+  add_map_pin(['Toulouse, France', 'Pau, France'], "DVeiLe-iEI0");
+  add_map_pin(['Brussels, Belgium', 'Lille, France'], "iyhYD3eNOvE");
+  add_map_pin(['Den Haag, Netherlands', 'Schiphol Airport, Netherlands'], "OTtQlqPN9TM");
+  add_map_pin(['Zurich, Switzerland'], "4Weu5gDf380");
+  add_map_pin(['Marseille, France', 'Nice, France'], "pVsPpSOB9Jw");
+  add_map_pin(['Valencia, Spain', 'Barcelona, Spain', 'Alicante, Spain'], "ibN-B9V1G08");
+  add_map_pin(['Zurich, Switzerland', 'Stuttgart, Germany'], "FYEztTNyu0I");
+  add_map_pin(['Sevilla, Spain', 'Málaga, Spain', 'Cordoba, Spain'], "wb8Bkynge4w");
+  add_map_pin(['Cologne, Germany', 'Brussels-Midi, Belgium'], "5NjBz8WeBPE");
+  add_map_pin(['Genoa, Italy', 'Pisa, Italy'], "0BcaHmpy4Ck");
+  add_map_pin(['Castellón de la Plana, Spain', 'Valencia Estació del Nord, Spain'], "MOsn7Lb9dyA");
+  add_map_pin(['Germany', 'Switzerland'], "QVb_3WghE8Y");
+  add_map_pin(['Milan, Italy', 'Zurich, Switzerland'], "hyoqd7DIl6g");
+  add_map_pin(['Monte-Carlo, Monaco'], "mgtrnUUHqjo");
+  add_map_pin(['Alicante, Spain', 'Valencia Nord, Spain'], "v9jcqkL9cr4");
+  add_map_pin(['Madrid Atocha, Spain', 'Valencia Joaquin Sorolla, Spain', 'Valencia, Spain', 'Gandia, Spain'], "-G0ReTtzc6k");
+  add_map_pin(['Brescia, Italy', 'Milan, Italy', 'Venice, Italy'], "IVvqVuixv1o");
+  add_map_pin(['Manresa, Spain', 'Barcelona, Spain'], "K1bTNEw8na4");
+  add_map_pin(['Brescia, Italy', 'Venice'], "wie3tfOAJXE");
+  add_map_pin(['Nice, France', 'Genoa, Italy', 'Milan, Italy'], "drVC_uBkwao");
+  add_map_pin(['BARCELONA, CATAYUNYA'], "HUpyl72mnxE");
+  add_map_pin(['Perpignan, France', 'Toulouse Matabiau, France'], "EGZ9FRZgtdI");
+  add_map_pin(['Barcelona Airport, Spain', 'Barcelona Sants Main Train Station, Spain', 'Barcelona City, Spain'], "Pyof6DS60ao");
+  add_map_pin(['Valencia, Spain', 'Alicante, Spain', 'Barcelona Sants, Spain'], "OWEYVLr4ZTA");
+  add_map_pin(['Almeria, Spain', 'Murcia, Spain'], "b6LCOkhVjIk");
+  add_map_pin(['Malaga, Spain', 'Almeria, Spain'], "n6JUbpQ-Kgo");
+  add_map_pin(['Lorca, Spain', 'Alicante, Spain', 'Valencia, Spain', 'Barcelona Sants, Spain'], "ExZfnEZnO9U");
+  add_map_pin(['Málaga, Spain', 'Malaga Costa del Sol Airport, Spain', 'Fuengirola, Spain', 'Costa del Sol, Spain'], "ANCxZKlxB_o");
+  add_map_pin(['Seville, Spain'], "xx5t_-hmbQg");
+  add_map_pin(['Granada, Granada'], "i2AoxKqa_Lg");
+  add_map_pin(['Almería, Spain', 'Granada, Spain'], "NhHM32PWJUg");
+  add_map_pin(['Almería, Spain'], "aFg2NfGNP0Q");
+  */
+  }
+</script>
+
+</body>
+</html>

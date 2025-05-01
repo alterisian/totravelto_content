@@ -8,12 +8,42 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer data-domain="totravelto.com" src="https://plausible.io/js/script.js"></script>
 </head>
+
 <body class="font-sans bg-white p-4">
   <div class="container mx-auto max-w-3xl">
-    <div>
-      <h1 class="text-2xl font-bold">ToTravelTo.com</h1>
-      <p class="text-gray-700">Making low-carbon travel possible, for all.</p>
+    <div id="company_header" class="flex items-center mb-6">
+      <div id="logo" class="mr-4">
+        <img src="assets/ToTravelToID_WithSurround.png" alt="ToTravelTo Logo" class="w-16 h-16">
+      </div>
+      <div id="totravelto">
+        <h1 class="text-2xl font-bold">ToTravelTo.com</h1>
+        <p class="text-gray-700">Making low-carbon travel possible, for all.</p>
+      </div>
     </div>
+    <div class="menu bg-white p-6 mb-6 shadow rounded">           
+      <a href="business.html" class="text-blue-500 hover:underline">Business</a> |
+      <a href="countries_and_operators_totravelto_covers.html" class="text-blue-500 hover:underline">Operators</a> |
+      <a href="lyma.html" class="text-blue-500 hover:underline">Our April Fool</a> |
+      <a href="nonstopeurotrip_map.html" class="text-blue-500 hover:underline">Our NonStopEuroTrip 100k Map</a>
+      <!--
+      Routes | Interrail 
+      -->
+    </div>
+    <div class="textarea-container bg-white p-6 mb-6 shadow rounded">
+      <h2 class="text-xl font-semibold mb-4">Time to make European train travel easier.</h2>
+      <p class="mb-4">
+        ToTravelTo is an early-stage startup, taking on the challenge of making low-carbon air replacement travel easier across Europe.
+        With emissions rising every year, from air travel, we feel there is an easy way to reduce emissions - use the train more, and save from 6x CO2 to 28x CO2 for night trains.
+        <br/><br/>
+        However, we know it's not easy. And that's where our AI product for planning and ticketing, as well as our ever growing community of expert train travellers.
+        <br/><br/>
+        We're progressing every week, and want you to be the first to try our product. We will grow through your valued feedback.
+        Sign up to our waitlist, and monthly newsletter today, and get travel discounts, and product insights tomorrow.
+        <br/><br/>
+        You can also join our community of train travel experts and enthusiasts, and post your queries there.
+      </p>
+    </div>
+    <!--
     <div class="textarea-container bg-white p-6 mb-6 shadow rounded">
       <p class="mb-4 text-gray-800">Tell the community about your 2024 holidays, and we’ll share ideas for 2025.</p>
       <form action="https://chat.totravelto.com/community/conversations/new" method="post">
@@ -30,6 +60,7 @@
         </button>
       </form>
     </div>
+    -->
 
     <div id="video-player" class="bg-white p-6 mb-6 shadow rounded hidden">
       <video id="train-video" autoplay muted playsinline class="w-full">
@@ -45,7 +76,7 @@
       </p>
       <h2 class="text-lg font-semibold mb-2">Thank you to all these GREAT people for all their contributions</h2>
       <p>
-        This project is made possible by the contributions of many individuals. 
+        This project is made possible by the contributions of many individuals. It really does take a village to make a startup.
         We are grateful for their support and dedication.
       </p>
       <p class="text-gray-700">
@@ -89,12 +120,21 @@
       </p>
       
     </div>
+
+    <div id="footer" class="contributors bg-gray-100 p-6 rounded shadow">
+      <p>
+        Interact with the train travel community in our 
+        <a href="https://facebook.com/groups/" target="_blank" class="text-blue-500 hover:underline">Facebook Group</a> 
+        and 
+        <a href="https://www.instagram.com/totraveltodotcom" target="_blank" class="text-blue-500 hover:underline">Instagram</a>. 
+        <br/> Keep up-to-date with the professional train industry happenings and our product on 
+        <a href="https://www.linkedin.com/company/totravelto/" target="_blank" class="text-blue-500 hover:underline">LinkedIn</a>
+      </p>
+      <p>&copy; 2025 To Travel To. All rights reserved.</p>
+    </div>
+
   </div>
 
-
-  <div id="footer">
-    <a href="countries_and_operators_totravelto_covers.html" target="_blank" class="text-blue-500 hover:underline">Which countries and operators does To Travel To cover?</a>
-  </div>
   <script>
     // Hide the video div initially
     const videoDiv = document.getElementById('video-player');
